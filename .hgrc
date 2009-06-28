@@ -1,0 +1,11 @@
+# Mercurial configuration file
+[ui]
+username = Lukasz Dobrzanski <lukasz.m.dobrzanski@gmai.com>
+ignore = ~/.hgignore
+ssh = ssh -C
+editor = vi
+
+[extensions]
+hgext.mq =
+
+
