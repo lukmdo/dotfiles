@@ -4,6 +4,11 @@ svndiff () { svn di $1 | vim -; }
 st () { svn st $*; }
 # -------------------------------------
 
+# ----------- git shortcuts ------------
+gitdiff () { git diff $1 | vim -; }
+gst () { git status $*; }
+# -------------------------------------
+
 pwc () { perl -wc $*; }
 rdo () { for file in `ls -1`; do $* $file; done; }
 md5dir () { cd $1; find ./ -type f -print0 | xargs -0 md5sum | md5sum; cd - 1>&-;  } 

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # shows diff between dotfiles dir and $HOME dir
+# Its simple version that uses vimdiff to compare
+# fike differences. For now directories are skiped.
 
 DIFF_STATUS=""
 for item in `ls -a ./`; do
