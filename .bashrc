@@ -6,6 +6,16 @@ export HISTCONTROL="ignoreboth"
 export PYTHONSTARTUP=~/.pythonstartup
 export PYTHONDOCS="/usr/share/doc/python26/"
 export PATH="/usr/local/bin/:${PATH}:/usr/local/mysql/bin/:/usr/local/pgsql/bin/:/opt/local/bin" 
+
+# -----------------------
+# virtualenvwrapper Stuff
+VIRTUAL_BASHRC="`which virtualenvwrapper_bashrc`"
+if [ -n "$VIRTUAL_BASHRC" ];then
+  if [ ! -f "$HOME/.virtualenvs" ];then mkdir "$HOME/.virtualenvs";fi
+  export WORKON_HOME=$HOME/.virtualenvs
+  source "$VIRTUAL_BASHRC"
+fi
+
 shopt -s checkwinsize 
 if [ "$TERM" != "dumb" ]; then 
 	eval "`dircolors -b`"
