@@ -4,7 +4,7 @@
 DIFF_STATUS=""
 for item in `ls -a ./`; do
   case "$item" in
-    "." |".."|"README"|"`basename $0`" ) ;;
+    "." |".."|"README"|"`basename $0`"|".fetchmailrc" ) ;;
     * ) 
       if [ -f "$item" ]; then
         diff -q "$HOME/$item" "./$item" >/dev/null
