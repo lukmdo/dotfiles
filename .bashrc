@@ -5,6 +5,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+export TMOUT=`expr 3600 \* 24 \* 7` # Entire week, hate the maskine to kick me out 
 export EDITOR="vi"
 export HISTCONTRO="ignoredups"
 export HISTCONTROL="ignoreboth"
