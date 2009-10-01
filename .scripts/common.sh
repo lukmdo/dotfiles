@@ -2,7 +2,7 @@
 # ----------- svn shortcuts ------------
 svndiff () { svn di $1 | vim -; }
 st () { svn st $*; }
-stm () { svn st $* |grep ^M } 
+stm () { svn st $* |grep ^M; } 
 # -------------------------------------
 
 # ----------- git shortcuts ------------
