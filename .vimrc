@@ -1,5 +1,9 @@
 set modeline
 set nocompatible
+
+set termencoding=utf-8
+set encoding=utf-8
+
 syntax on
 filetype on
 filetype indent on
@@ -43,7 +47,10 @@ set background=dark
 
 autocmd Filetype sh,awk set tabstop=2
 autocmd Filetype sh,awk set shiftwidth=2
+autocmd FileType perl set smartindent
+
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS

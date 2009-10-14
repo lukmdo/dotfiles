@@ -1,0 +1,4 @@
+Install details
+1. unzip omniperl.zip 
+2. vim omniperl.vba 
+3. :so % 
