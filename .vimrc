@@ -1,47 +1,42 @@
+set modeline
 set nocompatible
+syntax on
 filetype on
 filetype indent on
 filetype plugin on
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
 
 "-----------------------------------------------------------------
 " NICE Plugins/extensions: VimExplorer,Perl-support, Bash-support
 "-----------------------------------------------------------------
 
-set backspace=indent,eol,start
-
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file
-endif
-
-set nobackup
-
+" Don't use Ex mode, use Q for formatting
+map Q gq
 set autoindent 
 set backspace=indent,eol,start 
+set cindent autoindent
 set clipboard+=unnamed   
 set commentstring=\ #\ %s 
 set encoding=utf8 
-set foldlevel=0 
+set expandtab 
+"set foldlevel=0 
+set history=50		" keep 50 lines of command line history
+set hlsearch
 set ignorecase 
 set incsearch		" do incremental searching
-set history=50		" keep 50 lines of command line history
-set ruler		    " show the cursor position all the time
-set shiftwidth=4 
+set hid " you can change buffer without saving
+set nolz " do not redraw while running macros (much faster)
+set nowrap
+set number
+set paste            
+set ruler " Always show current positions along the bottom
 set shiftround      " wcinanie do najblizszego przystanky tab
+set shiftwidth=4 
+set showcmd
 set showcmd		    " display incomplete commands
 set tabstop=4
 set textwidth=0 
-set expandtab 
-set wildmenu 
-set number
-set paste            
-set nowrap
-syntax on
+set whichwrap+=,h,l  " backspace and cursor keys wrap to
+set wildmenu " turn on wild menu
 
 colorscheme desert
 set background=dark
@@ -53,17 +48,16 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
+" THIS SUCKS with SCREEN !!!!
+"if has('mouse')
+"  set mouse=a
+"endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -71,8 +65,6 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
-
-
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -116,3 +108,4 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 filetype plugin on
+
