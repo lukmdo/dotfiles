@@ -43,11 +43,15 @@ set paste
 set nowrap
 syntax on
 
-:colo elflord
-set background=light
+colorscheme desert
+set background=dark
 
-autocmd filetype sh,awk set tabstop=2
-autocmd filetype sh,awk set shiftwidth=2
+autocmd Filetype sh,awk set tabstop=2
+autocmd Filetype sh,awk set shiftwidth=2
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
