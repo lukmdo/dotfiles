@@ -1,12 +1,12 @@
 
 # ----------- svn shortcuts ------------
-svndiff () { svn di $1 | vim -; }
+svndiff () { svn di $* | vim -; }
 st () { svn st $*; }
 stm () { svn st $*|grep -v ^[?X]; } 
 # -------------------------------------
 
 # ----------- git shortcuts ------------
-gitdiff () { git diff $1 | vim -; }
+gitdiff () { git diff $* | vim -; }
 gst () { git status $*; }
 # -------------------------------------
 
