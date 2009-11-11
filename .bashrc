@@ -11,7 +11,8 @@ export HISTCONTRO="ignoredups"
 export HISTCONTROL="ignoreboth"
 export PYTHONSTARTUP=~/.pythonstartup
 export PYTHONDOCS="/usr/share/doc/python26/"
-export PATH="/usr/local/bin/:${PATH}:/usr/local/mysql/bin/:/usr/local/pgsql/bin/:/opt/local/bin" 
+export PATH="/usr/local/bin/:${PATH}:/usr/local/mysql/bin/:/usr/local/pgsql/bin/:/opt/local/bin:/opt/local/sbin" 
+export MANPATH="/opt/local/share/man:$MANPATH" 
 
 # -----------------------
 # virtualenvwrapper Stuff
