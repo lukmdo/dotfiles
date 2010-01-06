@@ -1,6 +1,6 @@
-hardstatus on
-hardstatus alwayslastline
-hardstatus string '%{= KW}%-Lw%{= WK}%50>%n%f* %t%{= KW}%+Lw%< %{= KW}%-= %d %M %Y %c:%s%{-}'
+#hardstatus on
+#hardstatus alwayslastline
+#hardstatus string '%{= KW}%-Lw%{= WK}%50>%n%f* %t%{= KW}%+Lw%< %{= KW}%-= %d %M %Y %c:%s%{-}'
 
 #escape ^Bb # Instead of Control-a, make the escape/command character be Control-b
 autodetach on # Autodetach session on hangup instead of terminating screen completely
