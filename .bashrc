@@ -19,6 +19,7 @@ VIRTUAL_BASHRC="`which virtualenvwrapper_bashrc`"
 if [ -n "$VIRTUAL_BASHRC" ];then
   if [ ! -d "$HOME/.virtualenvs" ];then mkdir "$HOME/.virtualenvs";fi
   export WORKON_HOME="$HOME/.virtualenvs"
+  export PIP_VIRTUALENV_BASE=$WORKON_HOME
   source "$VIRTUAL_BASHRC"
 fi
 

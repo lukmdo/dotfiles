@@ -1,6 +1,20 @@
 [user]
-  name = Lukasz Dobrzanski
-  email = lukasz.m.dobrzanski@gmail.com
-
+    name = Lukasz Dobrzanski
+    email = lukasz.m.dobrzanski@gmail.com
 [core]
-  excludesfile = /Users/serpiente/.gitignore_global
+    excludesfile = /Users/serpiente/.gitignore_global
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[alias]
+    st = status
+    b = branch
+    ci = commit
+    co = checkout
+[pager]
+    color = true
+[status]
+    color = auto
+[diff]
+    renamelimit = 0

@@ -20,7 +20,10 @@ fi
 if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
-
+#DBIC_NO_WARN_BAD_PERL=1
+#PS1="\[\033[1;31m\]\t\[\033[0m\] \h@\u:\w\$ "
+#export PS1
+#export DBIC_NO_WARN_BAD_PERL
 export MYSQL_PS1="(\u@\h) [\d]> "
 
 
@@ -41,3 +44,17 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+
+# Setting PATH for MacPython 2.6
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
+export PATH
+
+# PERLSONAL stuff
+PATH="${HOME}/ENV@/gwt/:${PATH}"
+
+# To tell pip to only run if there is a virtualenv currently activated, and to bail if not
+export PIP_REQUIRE_VIRTUALENV=true                                 
+
+# To tell pip to automatically use the currently active virtualenv 
+export PIP_RESPECT_VIRTUALENV=true
