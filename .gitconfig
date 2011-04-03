@@ -3,6 +3,7 @@
     email = lukasz.m.dobrzanski@gmail.com
 [core]
     excludesfile = /Users/serpiente/.gitignore_global
+	editor = mate -w
 [color]
     diff = auto
     status = auto
