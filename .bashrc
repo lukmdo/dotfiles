@@ -38,13 +38,10 @@ if [ -f ~/.scripts/common.sh ]; then . ~/.scripts/common.sh; fi
 if [ -f ~/.git_completion.sh ]; then . ~/.git_completion.sh; fi
 if [ -f ~/.hg_completion ];     then . ~/.hg_completion; fi
 
-#X=$(git branch 2>/dev/null | grep -e '^*'| sed -e 's/* //'); if [ $? -eq 0 ];then
-#    BRANCH=$(git branch | grep -e '^*'| sed -e 's/* //')
-#    PS1="\[\033[1;31m\]>>>> $BRANCH \t\[\033[0m\] \h@\u:\w\$ "
-#else
-export PS1="\[\033[1;31m\]>>>> \t\[\033[0m\] \h@\u:\w\$ "
-#fi
-#PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+export GIT_PS1_SHOWDIRTYSTATE=1     #... untagged(*) and staged(+) changes
+export GIT_PS1_SHOWSTASHSTATE=1     #... if something is stashed($)
+export GIT_PS1_SHOWUNTRACKEDFILES=1 #... untracked files(%)
+export PS1='\[\033[1;31m\]>>>> \t\[\033[0m\] \h@\u:\w$(__git_ps1 " (%s)")\$ '
 HISTSIZE=10000
 
 #function parse_git_branch {
@@ -55,7 +52,7 @@ HISTSIZE=10000
 
 # 
 ## PYTHONPATH
-export PYTHONPATH=$PYTHONPATH:$HOME/projects:$HOME/modules
+#export PYTHONPATH=$PYTHONPATH:$HOME/projects:$HOME/modules
 # 
 ## PATH
-export PATH=$PATH:$HOME/bin:$HOME/source/django/django/bin
+#export PATH=$PATH:$HOME/bin:$HOME/source/django/django/bin
