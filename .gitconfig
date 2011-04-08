@@ -9,10 +9,15 @@
     status = auto
     branch = auto
 [alias]
-    st = status
     b = branch
     ci = commit
     co = checkout
+    df = diff
+    lg = log -p
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ls = ls-files
+    st = status
 [pager]
     color = true
 [status]
