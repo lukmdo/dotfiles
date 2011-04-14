@@ -197,11 +197,11 @@ __git_ps1_show_upstream ()
 		"0	0") # equal to upstream
 			p="=" ;;
 		"0	"*) # ahead of upstream
-			p=">" ;;
+			p="↑" ;;
 		*"	0") # behind upstream
-			p="<" ;;
+			p="↓" ;;
 		*)	    # diverged from upstream
-			p="<>" ;;
+			p="↕" ;;
 		esac
 	else
 		case "$count" in
@@ -227,8 +227,8 @@ __git_ps1 ()
 {
 	local g="$(__gitdir)"
 	if [ -n "$g" ]; then
-		local r=""
-		local b=""
+		local r="" # rebase
+		local b="" # branch
 		if [ -f "$g/rebase-merge/interactive" ]; then
 			r="|REBASE-i"
 			b="$(cat "$g/rebase-merge/head-name")"
@@ -272,12 +272,12 @@ __git_ps1 ()
 			}
 		fi
 
-		local w=""
-		local i=""
-		local s=""
-		local u=""
+		local w="" # work-dir *
+		local i="" # index +
+		local s="" # stash $
+		local u="" # untracked %
 		local c=""
-		local p=""
+		local p="" # upstream
 
 		if [ "true" = "$(git rev-parse --is-inside-git-dir 2>/dev/null)" ]; then
 			if [ "true" = "$(git rev-parse --is-bare-repository 2>/dev/null)" ]; then

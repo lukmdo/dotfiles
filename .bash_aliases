@@ -38,8 +38,8 @@ alias apache_log="sudo vim /var/log/apache2/error.log"
 ## DJANGO ALIASES
 alias rs="python manage.py runserver --settings=$DJANGO_SETTINGS_MODULE"
 alias sdb="python manage.py syncdb --settings=$DJANGO_SETTINGS_MODULE"
-alias shell="django-admin.py shell --settings=$DJANGO_SETTINGS_MODULE"
-alias test="django-admin.py test --settings=$DJANGO_SETTINGS_MODULE"
+alias dshell="django-admin.py shell --settings=$DJANGO_SETTINGS_MODULE"
+alias dtest="django-admin.py test --settings=$DJANGO_SETTINGS_MODULE"
 # 
 ## MYSQL ALIASES
 alias mysql_restart="sudo /etc/init.d/mysql restart"

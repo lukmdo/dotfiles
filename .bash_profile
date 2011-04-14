@@ -20,12 +20,19 @@ if [ -f $HOME/.bash_aliases ]; then
   source $HOME/.bash_aliases  
 fi
 
+if [ -f $HOME/.bash_prompt ]; then
+  source $HOME/.bash_prompt
+fi
+
+if [ -f $HOME/.scripts/resty/resty ]; then
+  source $HOME/.scripts/resty/resty
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
-export MYSQL_PS1="(\u@\h) [\d]> "
 export PERL5LIB="$HOME/ENV@/lib/perl5/site_perl/5.8.9/:$PERL5LIB"
 
 

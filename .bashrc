@@ -38,10 +38,6 @@ if [ -f ~/.scripts/common.sh ]; then . ~/.scripts/common.sh; fi
 if [ -f ~/.git_completion.sh ]; then . ~/.git_completion.sh; fi
 if [ -f ~/.hg_completion ];     then . ~/.hg_completion; fi
 
-export GIT_PS1_SHOWDIRTYSTATE=1     #... untagged(*) and staged(+) changes
-export GIT_PS1_SHOWSTASHSTATE=1     #... if something is stashed($)
-export GIT_PS1_SHOWUNTRACKEDFILES=1 #... untracked files(%)
-export PS1='\[\033[1;31m\]>>>> \t\[\033[0m\] \h@\u:\w$(__git_ps1 " (%s)")\$ '
 HISTSIZE=10000
 
 #function parse_git_branch {
