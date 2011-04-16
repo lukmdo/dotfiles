@@ -28,6 +28,20 @@ if [ -f $HOME/.scripts/resty/resty ]; then
   source $HOME/.scripts/resty/resty
 fi
 
+# -----------------------
+# virtualenvwrapper Stuff
+## To tell pip to only run if there is a virtualenv currently activated, and to bail if not
+export PIP_REQUIRE_VIRTUALENV=true                                 
+
+VIRTUALENVWRAPPER="$HOME/.scripts/virtualenvwrapper.sh"
+if [ -n "$VIRTUALENVWRAPPER" ];then
+  if [ ! -d "$HOME/.virtualenvs" ];then mkdir "$HOME/.virtualenvs";fi
+  export WORKON_HOME="$HOME/.virtualenvs"
+  export PIP_VIRTUALENV_BASE="$WORKON_HOME"
+  export PIP_RESPECT_VIRTUALENV=true # use currently activated virtualenv
+  source "$VIRTUALENVWRAPPER"
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
@@ -62,8 +76,3 @@ export PATH
 # PERLSONAL stuff
 PATH="${HOME}/ENV@/bin/:${HOME}/ENV@/gwt/:${PATH}"
 
-# To tell pip to only run if there is a virtualenv currently activated, and to bail if not
-export PIP_REQUIRE_VIRTUALENV=true                                 
-
-# To tell pip to automatically use the currently active virtualenv 
-export PIP_RESPECT_VIRTUALENV=true
