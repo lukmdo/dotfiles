@@ -24,3 +24,5 @@
     color = auto
 [diff]
     renamelimit = 0
+[merge]
+	tool = vimdiff

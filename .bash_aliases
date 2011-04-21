@@ -19,10 +19,6 @@ alias pypath="python -c 'import sys; print sys.path' | tr ',' '\n' | grep -v 'eg
 alias ijython="jython $HOME/ENV@/java-readline/jipython/ipython-0.10/ipython.py"
 alias home="cd $HOME"
 # 
-## APTITUDE ALIASES
-alias update="sudo aptitude update"
-alias upgrade="sudo aptitude safe-upgrade"
-# 
 ## NGINX ALIASES
 alias nginx_restart="sudo /etc/init.d/nginx restart"
 alias nginx_start="sudo /etc/init.d/nginx start"
