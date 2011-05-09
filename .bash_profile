@@ -68,11 +68,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 
-# Setting PATH for MacPython 2.6
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 export PATH
 
 # PERLSONAL stuff
 PATH="${HOME}/ENV@/bin/:${HOME}/ENV@/gwt/:${PATH}"
-
