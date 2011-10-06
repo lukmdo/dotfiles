@@ -20,9 +20,9 @@ alias ijython="jython $HOME/ENV@/java-readline/jipython/ipython-0.10/ipython.py"
 alias home="cd $HOME"
 # 
 ## NGINX ALIASES
-alias nginx_restart="sudo /etc/init.d/nginx restart"
-alias nginx_start="sudo /etc/init.d/nginx start"
-alias nginx_stop="sudo /etc/init.d/nginx stop"
+alias nginx_restart="sudo nginx -s reload -c $HOME/.nginx/sites-enabled/default.conf"
+alias nginx_start="sudo nginx -c $HOME/.nginx/sites-enabled/default.conf"
+alias nginx_stop="sudo nginx -s stop"
 # 
 ## APACHE ALIASES
 alias apache_restart="sudo /etc/init.d/apache2 restart"
@@ -50,7 +50,6 @@ alias g='git'
 alias gb='git branch'
 alias gba='git branch -a'  
 alias gbd="git branch -d"
-#alias gc="git commit"
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gd='git diff | mate'

@@ -3,7 +3,7 @@
     email = lukasz.m.dobrzanski@gmail.com
 [core]
     excludesfile = /Users/serpiente/.gitignore_global
-	editor = mate -w
+    editor = mate --wait
 [color]
     diff = auto
     status = auto
@@ -25,4 +25,4 @@
 [diff]
     renamelimit = 0
 [merge]
-	tool = vimdiff
+    tool = vimdiff
