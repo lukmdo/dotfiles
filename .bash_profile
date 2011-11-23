@@ -2,14 +2,18 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
+if [ ! -d "$HOME/bin" ] ; then
+  mkdir "$HOME/bin"
+fi
 
+PATH="$HOME/bin":"${PATH}"
+export PERL5LIB="$HOME/ENV@/lib/perl5/site_perl/5.8.9/:$PERL5LIB"
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 export MANPATH="${HOME}/ENV@/man/:${HOME}/ENV@/share/man/:$MANPATH"
+
 #export CLASSPATH="${HOME}/ENV@/java-readline/libreadline-java.jar:${CLASSPATH}"
 #export LD_LIBRARY_PATH="${HOME}/ENV@/java-readline/:${LD_LIBRARY_PATH}"
-
- #Setting PATH for MacPython 2.5
-# The orginal version is saved in .bash_profile.pysave
-export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 
 # include .bashrc if it exists
 if [ -f $HOME/.bashrc ]; then
@@ -26,6 +30,8 @@ fi
 
 if [ -f $HOME/.scripts/resty/resty ]; then
   source $HOME/.scripts/resty/resty
+  ln -fs $HOME/.scripts/resty/pp $HOME/bin/
+  ln -fs $HOME/.scripts/resty/pypp $HOME/bin/
 fi
 
 # -----------------------
@@ -42,34 +48,3 @@ if [ -n "$VIRTUALENVWRAPPER" ];then
   source "$VIRTUALENVWRAPPER"
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d ~/bin ] ; then
-    PATH=~/bin:"${PATH}"
-fi
-
-export PERL5LIB="$HOME/ENV@/lib/perl5/site_perl/5.8.9/:$PERL5LIB"
-
-
-##
-# Your previous /Users/serpiente/.bash_profile file was backed up as /Users/serpiente/.bash_profile.macports-saved_2009-11-14_at_12:01:11
-##
-
-# MacPorts Installer addition on 2009-11-14_at_12:01:11: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-
-##
-# Your previous /Users/serpiente/.bash_profile file was backed up as /Users/serpiente/.bash_profile.macports-saved_2009-11-14_at_12:48:33
-##
-
-# MacPorts Installer addition on 2009-11-14_at_12:48:33: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-
-PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-export PATH
-
-# PERLSONAL stuff
-PATH="${HOME}/ENV@/bin/:${HOME}/ENV@/gwt/:${PATH}"
