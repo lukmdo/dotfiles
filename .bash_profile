@@ -6,11 +6,12 @@ if [ ! -d "$HOME/bin" ] ; then
   mkdir "$HOME/bin"
 fi
 
-PATH="$HOME/bin":"${PATH}"
-export PERL5LIB="$HOME/ENV@/lib/perl5/site_perl/5.8.9/:$PERL5LIB"
+export CDPATH=".:${HOME}/PycharmProjects/:/usr/local/google_appengine/"
+export PATH="$HOME/bin":"${PATH}"
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 export MANPATH="${HOME}/ENV@/man/:${HOME}/ENV@/share/man/:$MANPATH"
+export PERL5LIB="$HOME/ENV@/lib/perl5/site_perl/5.8.9/:$PERL5LIB"
 
 #export CLASSPATH="${HOME}/ENV@/java-readline/libreadline-java.jar:${CLASSPATH}"
 #export LD_LIBRARY_PATH="${HOME}/ENV@/java-readline/:${LD_LIBRARY_PATH}"

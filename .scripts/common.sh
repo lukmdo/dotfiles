@@ -7,7 +7,6 @@ stm () { svn st $*|grep -v ^[?X]; }
 
 # ----------- git shortcuts ------------
 gitdiff () { git diff $* | vim -; }
-gst () { git status $*; }
 # -------------------------------------
 
 pwc () { perl -wc $*; }
