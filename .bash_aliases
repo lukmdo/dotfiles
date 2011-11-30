@@ -15,9 +15,12 @@ alias df="df -h"                              # Disk free, in gigabytes, not byt
 alias du="du -h -c"                           # Calculate total disk usage for a folder
 alias rhino="java -jar ~/bin/rhino.jar"       # Begin a rhino session
 alias prs="python -m SimpleHTTPServer"        # Simple python server
-alias pypath="python -c 'import sys; print sys.path' | tr ',' '\n' | grep -v 'egg'" # Show pythonpath
+alias pypath="python -c 'from pprint import pprint; import sys; pprint(sys.path)'" # Show pythonpath
 alias ijython="jython $HOME/ENV@/java-readline/jipython/ipython-0.10/ipython.py"
 alias home="cd $HOME"
+alias pbwww='pbpaste |python -c "import webbrowser, sys; map(lambda url: webbrowser.open(url), sys.stdin.readlines())"'
+alias ttop='watch  -n3 "ps caux -c |head|awk '\''{print \$3,\$4,\$NF}'\'' && echo && ps caux -m |head|awk '\''{print \$4,\$3,\$NF}'\'' " '
+
 # 
 ## NGINX ALIASES
 alias nginx_restart="sudo nginx -s reload -c $HOME/.nginx/sites-enabled/default.conf"
