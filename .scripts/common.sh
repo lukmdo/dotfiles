@@ -11,7 +11,26 @@ gitdiff () { git diff $* | vim -; }
 
 pwc () { perl -wc $*; }
 rdo () { for file in `ls -1`; do $* $file; done; }
-md5dir () { cd $1; find ./ -type f -print0 | xargs -0 md5sum | md5sum; cd - 1>&-;  } 
+
+md5dir () {
+    if [ ! -d "$1" ]; then
+        echo "$1: No such directory"
+        return 2
+    fi
+    
+    pushd `pwd` &> /dev/null
+    cd $1 &>/dev/null
+    dir_path=`pwd`
+    popd &> /dev/null
+    
+    hash md5 &> /dev/null
+    if [ $? -eq 0 ]; then
+        find -s $dir_path -type f -exec md5 {} \; | awk '{print $NF}' | md5
+    else
+        find -s $dir_path -type f -exec md5sum {} \; | awk '{print $NF}' | md5sum
+    fi
+}
+
 sc () { 
   for FILE in $*; do 
     ft=`echo $FILE |awk -F. '{print $(NF)}'`
