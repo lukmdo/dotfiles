@@ -4,6 +4,8 @@
 [core]
     excludesfile = /Users/serpiente/.gitignore_global
     editor = mate --wait
+	autocrlf = input
+	safecrlf = true
 [color]
     diff = auto
     status = auto
