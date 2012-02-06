@@ -49,3 +49,11 @@ if [ -n "$VIRTUALENVWRAPPER" ];then
   source "$VIRTUALENVWRAPPER"
 fi
 
+SMSGATES_BOOTSTRAP=`which smsgates_bootstrap.sh`
+if [ "$?" -eq "0" ]; then
+  export SMSGATES_SENDSMS_GATE="GATENAME"
+  export SMSGATES_SENDSMS_LOGIN="LOGIN"
+  export SMSGATES_SENDSMS_PASSWORD="PASSWORD"
+  source "$SMSGATES_BOOTSTRAP"
+fi
+
