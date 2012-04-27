@@ -28,3 +28,9 @@
     renamelimit = 0
 [merge]
     tool = vimdiff
+[rerere]
+	enabled = true
+[push]
+	default = current
+[branch]
+	autosetuprebase = always
