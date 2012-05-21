@@ -32,6 +32,10 @@ if [ -f $HOME/.scripts/resty/resty ]; then
   ln -fs $HOME/.scripts/resty/pypp $HOME/bin/
 fi
 
+# colorize grep
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+
 # -----------------------
 # virtualenvwrapper Stuff
 ## To tell pip to only run if there is a virtualenv currently activated, and to bail if not
