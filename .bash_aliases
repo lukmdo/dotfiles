@@ -28,6 +28,8 @@ alias ttop='watch  -n3 "ps caux -c |head|awk '\''{print \$3,\$4,\$NF}'\'' && ech
 alias nginx_restart="sudo nginx -s reload -c $HOME/.nginx/sites-enabled/default.conf"
 alias nginx_start="sudo nginx -c $HOME/.nginx/sites-enabled/default.conf"
 alias nginx_stop="sudo nginx -s stop"
+alias nginx_this='rm -f ~/.nginx/sites-enabled/default.conf; cat ~/.nginx/sites-enabled/conf.template | sed -e "s/TEMPLATE_PATH/${PWD//\//\\/}/" > ~/.nginx/sites-enabled/default.conf; nginx_stop; nginx_start'
+
 # 
 ## APACHE ALIASES
 alias apache_restart="sudo /etc/init.d/apache2 restart"

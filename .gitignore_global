@@ -2,6 +2,8 @@
 *.pyc
 *.swp
 *~
+*.esproj
+*.espressostorage
 .DS_Store
 .svn/
 .idea/
