@@ -54,6 +54,7 @@ alias mysql_stop="sudo /etc/init.d/mysql stop"
 alias postgresql_restart="sudo /etc/init.d/postgresql-8.3 restart"
 # 
 ## GIT ALIASES
+alias git='hub'
 alias g='git'
 alias gb='git branch'
 alias gba='git branch -a'  

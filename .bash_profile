@@ -1,14 +1,6 @@
-# ~/.bash_profile: executed by bash(1) for login shells.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
-
-if [ ! -d "$HOME/bin" ] ; then
-  mkdir "$HOME/bin"
-fi
-
 export CDPATH=".:${HOME}/PycharmProjects/:/usr/local/google_appengine/"
-export PATH="$HOME/ENV/bin":"${PATH}"
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH="${HOME}/bin:${HOME}/ENV/bin:${PATH}"
+export PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
 export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 export MANPATH="${HOME}/ENV/man/:${HOME}/ENV/share/man/:$MANPATH"
 export PERL5LIB="$HOME/ENV/lib/perl5/site_perl/5.8.9/:$PERL5LIB"

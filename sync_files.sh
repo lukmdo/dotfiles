@@ -3,10 +3,12 @@
 # Its simple version that uses vimdiff to compare
 # fike differences. For now directories are skiped.
 
+PATTERN="$*"
+
 DIFF_STATUS=""
-for item in `ls -a ./`; do
+for item in `ls -a |grep "$PATTERN"`; do
   case "$item" in
-    "." |".."|".git"|README*|"`basename $0`"|".fetchmailrc" ) ;;
+    "." |".."|".git"|"Makefile"|README*|"`basename $0`"|".fetchmailrc" ) ;;
     * )
       diff -q "$HOME/$item" "./$item" >/dev/null
       if [ "$?" -ne 0 ]; then

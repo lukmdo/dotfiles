@@ -2,10 +2,10 @@
     name = Lukasz Dobrzanski
     email = lukasz.m.dobrzanski@gmail.com
 [core]
-    excludesfile = /Users/serpiente/.gitignore_global
+    excludesfile = ~/.gitignore_global
     editor = mate --wait
-	autocrlf = input
-	safecrlf = true
+    autocrlf = input
+    safecrlf = true
 [color]
     diff = auto
     status = auto
