@@ -8,7 +8,7 @@ PATTERN="$*"
 DIFF_STATUS=""
 for item in `ls -a |grep "$PATTERN"`; do
   case "$item" in
-    "." |".."|".git"|"Makefile"|README*|"`basename $0`"|".fetchmailrc" ) ;;
+    "." |".."|".git"|"Makefile"|README*|"`basename $0`"|"other" ) ;;
     * )
       diff -q "$HOME/$item" "./$item" >/dev/null
       if [ "$?" -ne 0 ]; then

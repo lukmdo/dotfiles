@@ -1,0 +1,15 @@
+SHELL="/bin/bash"
+PATH="/usr/bin:/bin:/usr/sbin:$PATH"
+
+# locate 
+@daily sudo /usr/libexec/locate.updatedb
+
+# Nginx
+@daily echo "" > /Users/ldobrzanski/.nginx/access.log
+@daily echo "" > /Users/ldobrzanski/.nginx/error.log
+
+
+# ether 60:c5:47:02:1d:e6
+# sudo /sbin/ifconfig en0 down
+# sudo /sbin/ifconfig RH() { echo $(printf %02x $[$RANDOM % 256]); }; en0 ether "$(RH):$(RH):$(RH):$(RH):$(RH)"
+# sudo /sbin/ifconfig en0 up
