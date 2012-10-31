@@ -10,6 +10,7 @@ LIGHT_GREEN="\[\033[1;32m\]"
  LIGHT_GRAY="\[\033[0;37m\]"
  COLOR_NONE="\[\e[0m\]"
 
+source ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1     #... unstaged(*) and staged(+) changes
 export GIT_PS1_SHOWSTASHSTATE=1     #... if something is stashed($)
 export GIT_PS1_SHOWUNTRACKEDFILES=1 #... untracked files(%)

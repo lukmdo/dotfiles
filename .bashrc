@@ -26,7 +26,7 @@ fi
 
 shopt -s checkwinsize 
 if [ "$TERM" != "dumb" ]; then 
-	eval "`dircolors -b`"
+	eval "`dircolors -b 2>/dev/null`"
 	alias ls='ls --color=auto'
 fi
 
