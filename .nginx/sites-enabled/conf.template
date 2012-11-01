@@ -27,6 +27,7 @@ http {
 
         proxy_set_header Host $host;
         location / {
+            rewrite  ^/v\d+/static/(.*)$  /static/$1 last;
             rewrite  ^/images/(.*)$  /static/images/$1 last;
 
             if (-f $request_filename) {
