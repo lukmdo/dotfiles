@@ -7,6 +7,7 @@ fi
 
 export EDITOR="vi"
 export HISTSIZE=10000
+export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL="ignoreboth"
 export PYTHONSTARTUP=~/.pythonstartup
 export TM_PYCHECKER="pylint"
@@ -30,10 +31,7 @@ if [ "$TERM" != "dumb" ]; then
 	alias ls='ls --color=auto'
 fi
 
-if [ -f /etc/bash_completion ]; 
-	then . /etc/bash_completion
-fi
-
+if [ -f /etc/bash_completion ]; then . /etc/bash_completion; fi
 if [ -f ~/.scripts/common.sh ]; then . ~/.scripts/common.sh; fi
 if [ -f ~/.git_completion.sh ]; then . ~/.git_completion.sh; fi
 if [ -f ~/.hub.bash_completion.sh ]; then . ~/.hub.bash_completion.sh; fi
