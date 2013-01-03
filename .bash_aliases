@@ -75,4 +75,9 @@ alias flow_referrers="sudo tcpflow -c -i lo tcp port 8080 | grep Referer:"
 alias flow_from="sudo tcpflow -c -i lo tcp port 8080 | grep From:"
 alias flow_agent="sudo tcpflow -c -i lo tcp port 8080 | grep User-Agent:"
 alias flow_location="sudo tcpflow -c -i lo tcp port 8080 | grep Location:"
-
+#
+## OS X tools for Linux 
+if [ ! $(uname -s) = "Darwin" ]; then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+fi
