@@ -1,4 +1,4 @@
-# Environment (dotfiles) sync tool
+# Environment (dotfiles) + sync tool
 
 - ```make sync``` to sync all
 - ```make FILE="FILE_NAME" sync``` to sync only that file
