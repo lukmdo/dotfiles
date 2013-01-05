@@ -29,7 +29,7 @@ alias make_ls_targets="awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print \$1}
 alias nginx_restart="sudo nginx -s reload -c $HOME/.nginx/sites-enabled/default.conf"
 alias nginx_start="sudo nginx -c $HOME/.nginx/sites-enabled/default.conf"
 alias nginx_stop="sudo nginx -s stop"
-alias nginx_this='rm -f ~/.nginx/sites-enabled/default.conf; cat ~/.nginx/sites-enabled/conf.template | sed -e "s/TEMPLATE_PATH/${PWD//\//\\/}/" > ~/.nginx/sites-enabled/default.conf; nginx_stop; nginx_start'
+alias nginx_this='rm -f ~/.nginx/sites-enabled/default.conf; cat ~/.nginx/sites-enabled/conf.template | sed -e "s/TEMPLATE_PATH/${PWD//\//\\/}/"| sed -e "s/HOME/${HOME//\//\\/}/" > ~/.nginx/sites-enabled/default.conf; nginx_stop; nginx_start'
 
 # 
 ## APACHE ALIASES

@@ -23,7 +23,7 @@ fi
 
 for item in $ITEMS; do
   case "$item" in
-    "." |".."|".git"|".//.git"|"Makefile"|README*|"`basename $0`"|"other" ) ;;
+    "." |".."|".git"|".//.git"|"Makefile"|README*|"`basename $0`"|"other"|".pycharm_settings.jar" ) ;;
     * )
       diff -q "$HOME/$item" "./$item" >/dev/null
       if [ "$?" -ne 0 ]; then

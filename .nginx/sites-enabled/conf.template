@@ -17,12 +17,12 @@ http {
     keepalive_timeout  65;
 
     server {
-        access_log /Users/ldobrzanski/.nginx/access.log;
-        error_log  /Users/ldobrzanski/.nginx/error.log;
+        access_log HOME/.nginx/access.log;
+        error_log  HOME/.nginx/error.log;
         
         client_max_body_size 20M;
         root TEMPLATE_PATH;
-        server_name tas;
+        server_name dev;
         gzip off;
 
         proxy_set_header Host $host;

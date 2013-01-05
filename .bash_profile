@@ -50,3 +50,9 @@ if [ "$?" -eq "0" ]; then
   source "$SMSGATES_BOOTSTRAP"
 fi
 
+HUB=`which hub`
+if [ "$?" -eq "0" ]; then
+  export GITHUB_USER="USER"
+  export GITHUB_PASSWORD="PASS"
+fi
+
