@@ -1,0 +1,15 @@
+R
+curl
+dos2unix
+erlang
+gawk
+gsed
+gzip
+htop
+links +x11
+nginx
+nodejs
+tree
+unrar
+wget
+mutt
