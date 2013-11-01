@@ -5,7 +5,7 @@
     excludesfile = ~/.gitignore_global
     editor = mate --wait
     autocrlf = input
-    safecrlf = true
+    #safecrlf = true
 [color]
     diff = auto
     status = auto
@@ -34,3 +34,5 @@
 	default = current
 [branch]
 	autosetuprebase = always
+# [hub]
+    # protocol = https

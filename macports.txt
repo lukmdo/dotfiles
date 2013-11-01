@@ -7,9 +7,10 @@ gsed
 gzip
 htop
 links +x11
+mutt
 nginx
 nodejs
 tree
 unrar
 wget
-mutt
+
