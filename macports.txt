@@ -12,5 +12,5 @@ nginx
 nodejs
 tree
 unrar
+watch
 wget
-

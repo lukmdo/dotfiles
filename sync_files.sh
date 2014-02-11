@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # shows diff between dotfiles dir and $HOME dir
 # Its simple version that uses vimdiff to compare
 # fike differences. For now directories are skiped.
@@ -23,19 +24,25 @@ fi
 
 for item in $ITEMS; do
   case "$item" in
-    "." |".."|".git"|".//.git"|"Makefile"|README*|"`basename $0`"|"other"|".pycharm_settings.jar" ) ;;
+    "." |".."|".git"|".//.git"|"Makefile"|README*|"`basename $0`"|"macports.txt"|"other"|".pycharm_settings.jar" ) ;;
     * )
-      diff -q "$HOME/$item" "./$item" >/dev/null
-      if [ "$?" -ne 0 ]; then
-        DIFF_STATUS=1
-        if [ -d "$item" ]; then
-          if [ ! -d "$HOME/$item" ]; then
-            mkdir "$HOME/$item"
-          fi
-          vim '+execute "DirDiff" argv(0) argv(1)' "$HOME/$item" "./$item"
+      diff -q "$HOME/$item" "./$item" 1>/dev/null 2>/dev/null
+      if [ "$?" -eq "0" ]; then 
+        continue
+      fi
+
+      DIFF_STATUS=1
+      if [ -d "$item" ]; then
+        if [ ! -d "$HOME/$item" ]; then
+          mkdir "$HOME/$item"
+        fi
+        vim '+execute "DirDiff" argv(0) argv(1)' "$HOME/$item" "./$item"
+      else
+        if [ -e "./$item" ] && [ ! -e "$HOME/$item" ]; then
+          cp "./$item" "$HOME/$item"
         else
           vimdiff "$HOME/$item" "./$item"
-        fi
+        fi          
       fi
   esac
 done

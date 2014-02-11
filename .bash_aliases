@@ -24,6 +24,7 @@ alias pbwww='pbpaste |python -c "import webbrowser, sys; map(lambda url: webbrow
 alias ttop='watch  -n3 "ps caux -c |head|awk '\''{print \$3,\$4,\$NF}'\'' && echo && ps caux -m |head|awk '\''{print \$4,\$3,\$NF}'\'' " '
 alias make_ls_targets="awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print \$1}' Makefile"
 alias topcoderArena="javaws http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp"
+alias rush='time timeout -s SIGKILL $*' # rush 10 sleep 12 
 
 # 
 ## NGINX ALIASES
