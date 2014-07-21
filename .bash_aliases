@@ -1,4 +1,3 @@
-#
 ## ALIASES
 alias ..="cd .."                              # Go up one directory
 alias ...="cd ../.."                          # Go up two directories
@@ -17,7 +16,6 @@ alias rhino="java -jar ~/bin/rhino.jar"       # Begin a rhino session
 alias prs="python -m SimpleHTTPServer"        # Simple python server
 alias plan='f () { mate -w ~/.plan_dir/lukmdo_plan_$(date -v ${*:-+0d} +"%Y%m%d").txt; ln -fs $(ls $HOME/.plan_dir/* | tail -1) $HOME/.plan; }; f' # .plan files
 
-#
 ## OWN ALIASES
 alias pypath="python -c 'from pprint import pprint; import sys; pprint(sys.path)'" # Show pythonpath
 alias ijython="jython $HOME/ENV@/java-readline/jipython/ipython-0.10/ipython.py"
@@ -27,35 +25,33 @@ alias make_ls_targets="awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print \$1}
 alias topcoderArena="javaws http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp"
 alias rush='time timeout -s SIGKILL $*' # rush 10 sleep 12 
 
-# 
 ## NGINX ALIASES
 alias nginx_restart="sudo nginx -s reload -c $HOME/.nginx/sites-enabled/default.conf"
 alias nginx_start="sudo nginx -c $HOME/.nginx/sites-enabled/default.conf"
 alias nginx_stop="sudo nginx -s stop"
 alias nginx_this='rm -f ~/.nginx/sites-enabled/default.conf; cat ~/.nginx/sites-enabled/conf.template | sed -e "s/TEMPLATE_PATH/${PWD//\//\\/}/"| sed -e "s/HOME/${HOME//\//\\/}/" > ~/.nginx/sites-enabled/default.conf; nginx_stop; nginx_start'
 
-# 
 ## APACHE ALIASES
 alias apache_restart="sudo /etc/init.d/apache2 restart"
 alias apache_reload="sudo /etc/init.d/apache2 reload"
 alias apache_start="sudo /etc/init.d/apache2 start"
 alias apache_stop="sudo /etc/init.d/apache2"
 alias apache_log="sudo vim /var/log/apache2/error.log"
-# 
+
 ## DJANGO ALIASES
 alias rs="python manage.py runserver --settings=$DJANGO_SETTINGS_MODULE"
 alias sdb="python manage.py syncdb --settings=$DJANGO_SETTINGS_MODULE"
 alias dshell="django-admin.py shell --settings=$DJANGO_SETTINGS_MODULE"
 alias dtest="django-admin.py test --settings=$DJANGO_SETTINGS_MODULE"
-# 
+
 ## MYSQL ALIASES
 alias mysql_restart="sudo /etc/init.d/mysql restart"
 alias mysql_start="sudo /etc/init.d/mysql start"
 alias mysql_stop="sudo /etc/init.d/mysql stop"
-# 
+
 ## Postgres
 alias postgresql_restart="sudo /etc/init.d/postgresql-8.3 restart"
-# 
+
 ## GIT ALIASES
 alias git='hub'
 alias g='git'
@@ -69,16 +65,17 @@ alias gl='git pull'
 alias gp='git push'
 alias gs="gitserve -p 8080 -a localhost"
 alias gst='git status'
-# 
+alias gpr='PR=`git pull-request`; echo $PR; echo $PR|pbcopy'
+
 ## RABBITMQ
 alias rabbit_start="sudo -H -u rabbitmq rabbitmq-server"
-# 
+
 ## TCPFLOW
 alias flow_referrers="sudo tcpflow -c -i lo tcp port 8080 | grep Referer:"
 alias flow_from="sudo tcpflow -c -i lo tcp port 8080 | grep From:"
 alias flow_agent="sudo tcpflow -c -i lo tcp port 8080 | grep User-Agent:"
 alias flow_location="sudo tcpflow -c -i lo tcp port 8080 | grep Location:"
-#
+
 ## OS X tools for Linux 
 if [ ! $(uname -s) = "Darwin" ]; then
     alias pbcopy='xsel --clipboard --input'
