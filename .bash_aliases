@@ -66,6 +66,7 @@ alias gp='git push'
 alias gs="gitserve -p 8080 -a localhost"
 alias gst='git status'
 alias gpr='PR=`git pull-request`; echo $PR; echo $PR|pbcopy'
+alias git-branches-cleanup='git branch --merged | grep -v "\*"| xargs -I {} sh -c "git push origin :{} ; git branch -d {}"'
 
 ## RABBITMQ
 alias rabbit_start="sudo -H -u rabbitmq rabbitmq-server"

@@ -5,8 +5,8 @@ PATH="/usr/bin:/bin:/usr/sbin:$PATH"
 @daily sudo /usr/libexec/locate.updatedb
 
 # Nginx
-@daily echo "" > /Users/ldobrzanski/.nginx/access.log
-@daily echo "" > /Users/ldobrzanski/.nginx/error.log
+@daily echo "" > $HOME/.nginx/access.log
+@daily echo "" > $HOME/.nginx/error.log
 
 
 # ether 60:c5:47:02:1d:e6
