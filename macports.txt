@@ -8,7 +8,7 @@ gsed
 gzip
 htop
 links +x11
-mutt
+mutt-devel
 nginx
 nodejs
 tree
