@@ -14,7 +14,7 @@ alias df="df -h"                              # Disk free, in gigabytes, not byt
 alias du="du -h -c"                           # Calculate total disk usage for a folder
 alias rhino="java -jar ~/bin/rhino.jar"       # Begin a rhino session
 alias prs="python -m SimpleHTTPServer"        # Simple python server
-alias plan='f () { mate -w ~/.plan_dir/lukmdo_plan_$(date -v ${*:-+0d} +"%Y%m%d").txt; ln -fs $(ls $HOME/.plan_dir/* | tail -1) $HOME/.plan; }; f' # .plan files
+alias plan='$HOME/.scripts/plan.sh'           # All in one ~/.plan files and ~/.plan_dir
 
 ## OWN ALIASES
 alias pypath="python -c 'from pprint import pprint; import sys; pprint(sys.path)'" # Show pythonpath
