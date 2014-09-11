@@ -16,15 +16,6 @@ alias rhino="java -jar ~/bin/rhino.jar"       # Begin a rhino session
 alias prs="python -m SimpleHTTPServer"        # Simple python server
 alias plan='$HOME/.scripts/plan.sh'           # All in one ~/.plan files and ~/.plan_dir
 
-## OWN ALIASES
-alias pypath="python -c 'from pprint import pprint; import sys; pprint(sys.path)'" # Show pythonpath
-alias ijython="jython $HOME/ENV@/java-readline/jipython/ipython-0.10/ipython.py"
-alias pbwww='pbpaste |python -c "import webbrowser, sys; map(lambda url: webbrowser.open(url.strip()), sys.stdin.readlines())"'
-alias ttop='watch  -n3 "ps caux -c |head|awk '\''{print \$3,\$4,\$NF}'\'' && echo && ps caux -m |head|awk '\''{print \$4,\$3,\$NF}'\'' " '
-alias make_ls_targets="awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print \$1}' Makefile | sort"
-alias topcoderArena="javaws http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp"
-alias rush='time timeout -s SIGKILL $*' # rush 10 sleep 12 
-
 ## NGINX ALIASES
 alias nginx_restart="sudo nginx -s reload -c $HOME/.nginx/sites-enabled/default.conf"
 alias nginx_start="sudo nginx -c $HOME/.nginx/sites-enabled/default.conf"
@@ -82,3 +73,19 @@ if [ ! $(uname -s) = "Darwin" ]; then
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
 fi
+
+
+## OWN ALIASES
+alias pypath="python -c 'from pprint import pprint; import sys; pprint(sys.path)'" # Show pythonpath
+alias ijython="jython $HOME/ENV@/java-readline/jipython/ipython-0.10/ipython.py"
+alias pbwww='pbpaste |python -c "import webbrowser, sys; map(lambda url: webbrowser.open(url.strip()), sys.stdin.readlines())"'
+alias ttop='watch  -n3 "ps caux -c |head|awk '\''{print \$3,\$4,\$NF}'\'' && echo && ps caux -m |head|awk '\''{print \$4,\$3,\$NF}'\'' " '
+alias make_ls_targets="awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print \$1}' Makefile | sort"
+alias topcoderArena="javaws http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp"
+alias rush='time timeout -s SIGKILL $*' # rush 10 sleep 12 
+
+## VERY OWN ALIASES
+alias jtt="open \
+https://jenkins-pr.lystit.com/job/lyst-master-unit-test-reports/lastCompletedBuild/testReport/ \
+https://jenkins-pr.lystit.com/job/lyst-master-unit-test-reports/lastCompletedBuild/testReport/history/ \
+https://jenkins-pr.lystit.com/job/ssaw-unit-tests/buildTimeTrend"
