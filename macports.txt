@@ -1,4 +1,6 @@
 ack
+autoconf
+automake
 R
 curl
 dos2unix
