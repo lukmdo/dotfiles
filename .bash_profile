@@ -35,7 +35,7 @@ export GREP_COLOR='1;32'
 ## To tell pip to only run if there is a virtualenv currently activated, and to bail if not
 export PIP_REQUIRE_VIRTUALENV=true                                 
 
-VIRTUALENVWRAPPER="$HOME/.scripts/virtualenvwrapper.sh"
+VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
 if [ -n "$VIRTUALENVWRAPPER" ];then
   if [ ! -d "$HOME/.virtualenvs" ];then mkdir "$HOME/.virtualenvs";fi
   export WORKON_HOME="$HOME/.virtualenvs"
