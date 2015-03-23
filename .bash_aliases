@@ -83,6 +83,7 @@ alias ttop='watch  -n3 "ps caux -c |head|awk '\''{print \$3,\$4,\$NF}'\'' && ech
 alias make_ls_targets="awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print \$1}' Makefile | sort"
 alias topcoderArena="javaws http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp"
 alias rush='time timeout -s SIGKILL $*' # rush 10 sleep 12 
+alias asum="awk '{s+=\$1} END {print s}'"
 
 ## VERY OWN ALIASES
 alias jtt="open \

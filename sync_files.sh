@@ -24,7 +24,7 @@ fi
 
 for item in $ITEMS; do
   case "$item" in
-    "." |".."|".git"|".//.git"|"Makefile"|README*|"`basename $0`"|"macports.txt"|"other"|".pycharm_settings.jar" ) ;;
+    "." |".."|".git"|".//.git"|"Makefile"|README*|use*|"`basename $0`"|"macports.txt"|"other"|".pycharm_settings.jar" ) ;;
     * )
       diff -q "$HOME/$item" "./$item" 1>/dev/null 2>/dev/null
       if [ "$?" -eq "0" ]; then 
