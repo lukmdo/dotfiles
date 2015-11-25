@@ -7,6 +7,7 @@
 .svn/
 .idea/
 .sass-cache
+.realsync
 
 # ----------------------------------------------------------------
 # https://github.com/github/gitignore/blob/master/Python.gitignore
@@ -24,6 +25,7 @@ env/
 build/
 develop-eggs/
 dist/
+.eggs/
 eggs/
 lib/
 lib64/

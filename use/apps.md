@@ -12,7 +12,7 @@ In Use
 - Screen Shots Sharing [tinygrab](http://tinygrab.com/)
 - [KeyNote](https://itunes.apple.com/ie/app/keynote/id409183694?mt=12)
 - System monitor [istatmenus](http://bjango.com/mac/istatmenus/)
-- GPG [gpgtools](https://gpgtools.org)
+- GPG [gpgtools](https://gpgtools.org) + http://support.gpgtools.org/discussions/problems/11154-multiple-messages
 - Expandable snippents [TextExpander](http://smilesoftware.com/TextExpander/index.html)
 - Manage windows with [SpectacleApp](http://spectacleapp.com)
 - Smippets with [TextExpander](http://smilesoftware.com/TextExpander/index.html)
