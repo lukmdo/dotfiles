@@ -10,8 +10,10 @@
     diff = auto
     status = auto
     branch = auto
+    ui = auto
 [alias]
     b = branch
+    bls = for-each-ref --sort="-committerdate" --format="%(authordate:short)%09%(refname:short)" refs/heads
     ci = commit
     co = checkout
     df = diff
@@ -29,10 +31,10 @@
 [merge]
     tool = vimdiff
 [rerere]
-	enabled = true
+    enabled = true
 [push]
-	default = current
+    default = current
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 # [hub]
-    # protocol = https
+#     protocol = https

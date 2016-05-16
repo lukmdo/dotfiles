@@ -49,8 +49,10 @@ alias g='git'
 alias gb='git branch'
 alias gba='git branch -a'  
 alias gbd="git branch -d"
+alias gbls='git for-each-ref --sort="-committerdate" --format="%(authordate:short)%09%(refname:short)" refs/heads | head'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
+alias gcan='git commit --amend --no-edit'
 alias gd='git diff | mate'
 alias gl='git pull'
 alias gp='git push'
@@ -58,6 +60,7 @@ alias gs="gitserve -p 8080 -a localhost"
 alias gst='git status'
 alias gpr='PR=`git pull-request`; echo $PR; echo $PR|pbcopy'
 alias git-branches-cleanup='git branch --merged | grep -v "\*"| xargs -I {} sh -c "git push origin :{} ; git branch -d {}"'
+alias gg="git grep"
 
 ## RABBITMQ
 alias rabbit_start="sudo -H -u rabbitmq rabbitmq-server"
@@ -83,10 +86,18 @@ alias ttop='watch  -n3 "ps caux -c |head|awk '\''{print \$3,\$4,\$NF}'\'' && ech
 alias make_ls_targets="awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print \$1}' Makefile | sort"
 alias topcoderArena="javaws http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp"
 alias rush='time timeout -s SIGKILL $*' # rush 10 sleep 12 
-alias asum="awk '{s+=\$1} END {print s}'"
+alias add="awk '{s+=\$1} END {print s}'"
+alias date_utc="date -u"
+alias date_sf="TZ=America/Los_Angeles date"
+alias date_uk="TZ=Europe/London date"
+alias date_pl="TZ=Europe/Warsaw date"
+alias date_am="TZ=Asia/Yerevan date"
+alias bac='_bac(){ mv $1 $1.bac; }; _bac'
 
 ## VERY OWN ALIASES
-alias jtt="open \
-https://jenkins-pr.lystit.com/job/lyst-master-unit-test-reports/lastCompletedBuild/testReport/ \
-https://jenkins-pr.lystit.com/job/lyst-master-unit-test-reports/lastCompletedBuild/testReport/history/ \
-https://jenkins-pr.lystit.com/job/ssaw-unit-tests/buildTimeTrend"
+
+alias bsd="ssh -v -i ~/.ssh/ec2freebsd.pem ec2-user@52.19.234.236"
+
+alias holidays_us="open /Users/lukmdo/Desktop/sL/hs2016.png"
+alias holidays_uk="open https://www.gov.uk/bank-holidays"
+alias gcalendar="open https://calendar.google.com"

@@ -64,3 +64,6 @@ fi
 
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
+if [ -f /usr/local/bin/aws_completer ]; then
+  complete -C '/usr/local/bin/aws_completer' aws
+fi
