@@ -1,10 +1,5 @@
-export CDPATH=".:${HOME}/PycharmProjects/:/usr/local/google_appengine/"
-export PATH="${HOME}/bin:${HOME}/ENV/bin:${PATH}"
-export PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
-export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-export PATH="/usr/local/bin:$PATH"
-export MANPATH="${HOME}/ENV/man/:${HOME}/ENV/share/man/:$MANPATH"
-export PERL5LIB="$HOME/ENV/lib/perl5/site_perl/5.8.9/:$PERL5LIB"
+source $HOME/.bash_path
+
 export HOMEBREW_GITHUB_API_TOKEN="GITHUB_API_TOKEN"
 
 # include .bashrc if it exists
@@ -62,7 +57,6 @@ if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
   . /opt/local/etc/profile.d/bash_completion.sh
 fi
 
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 if [ -f /usr/local/bin/aws_completer ]; then
   complete -C '/usr/local/bin/aws_completer' aws

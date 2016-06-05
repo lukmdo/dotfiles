@@ -95,7 +95,7 @@ alias date_am="TZ=Asia/Yerevan date"
 alias bac='_bac(){ mv $1 $1.bac; }; _bac'
 
 ## VERY OWN ALIASES
-
+source ~/.bash_my_aliases
 alias bsd="ssh -v -i ~/.ssh/ec2freebsd.pem ec2-user@52.19.234.236"
 
 alias holidays_us="open /Users/lukmdo/Desktop/sL/hs2016.png"
