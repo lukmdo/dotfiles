@@ -93,6 +93,8 @@ alias date_uk="TZ=Europe/London date"
 alias date_pl="TZ=Europe/Warsaw date"
 alias date_am="TZ=Asia/Yerevan date"
 alias bac='_bac(){ mv $1 $1.bac; }; _bac'
+# alias ubac='_ubac(){ mv $1 $1.bac; }; _bac'
+alias count='sort | uniq -c | sort -rn'
 
 ## VERY OWN ALIASES
 source ~/.bash_my_aliases
