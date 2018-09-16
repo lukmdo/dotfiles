@@ -85,21 +85,49 @@ alias pbwww='pbpaste |python -c "import webbrowser, sys; map(lambda url: webbrow
 alias ttop='watch  -n3 "ps caux -c |head|awk '\''{print \$3,\$4,\$NF}'\'' && echo && ps caux -m |head|awk '\''{print \$4,\$3,\$NF}'\'' " '
 alias make_ls_targets="awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print \$1}' Makefile | sort"
 alias topcoderArena="javaws http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp"
-alias rush='time timeout -s SIGKILL $*' # rush 10 sleep 12 
-alias add="awk '{s+=\$1} END {print s}'"
+
+# DOCKER
+alias dr='docker'
+alias docker_run='docker run -it --rm'
+alias docker_run_entrypoint='docker_run --entrypoint'
+alias docker_exec='docker exec -it'
+alias docker_clean='docker rm $(docker ps -a -q)'
+alias docker_ps='docker ps -a'
+alias docker_ps_exited='docker ps -a --filter status=exited'
+
+# K8S
+alias kubectl_exec='kubectl exec NAME --stdin --tty'
+alias kubectl_context='kubectl config current-context'
+alias minikube_strart='minikube start && eval $(minikube docker-env)'
+
+# OPENSSL
+alias openssl_check_key='openssl rsa -check -in' # FILE AS ARG
+alias openssl_check_cert='openssl x509 -text -noout -in' # FILE AS ARG
+alias openssl_verify_cert='openssl verify -verbose -CAfile' # 2ARGS: ca.pem cert.pem
+
+
+# alias bac='_bac(){ mv $1 $1.bac; }; _bac'
+# alias ubac='_ubac(){ mv $1 $1.bac; }; _bac'
+
+alias add='awk "{s+=\$1} END {print s}"'
+alias count='sort | uniq -c | sort -rn'
+alias nmax='count | head'
+alias nmin='count | tail'
+alias pname='awk -v ORS=" " "{ print \$0; system(\"ps -o comm= -p\" \$NF) }"'
+
+# time 
+alias stamp='xargs -L1 echo $(date "+%H:%M:%S")'
+alias rush='time timeout $*' # rush 10 sleep 12 
 alias date_utc="date -u"
 alias date_sf="TZ=America/Los_Angeles date"
 alias date_uk="TZ=Europe/London date"
 alias date_pl="TZ=Europe/Warsaw date"
 alias date_am="TZ=Asia/Yerevan date"
-alias bac='_bac(){ mv $1 $1.bac; }; _bac'
-# alias ubac='_ubac(){ mv $1 $1.bac; }; _bac'
-alias count='sort | uniq -c | sort -rn'
+
+# networking 
+alias ip='curl -s httpbin.org/ip | awk "/origin/ {gsub(\"\\\"\", \"\"); print \$2}"'
+alias ip_l='ifconfig en0 | awk "\$1==\"inet\" {print \$2}" '
+alias dns_clear_cache='sudo killall -HUP mDNSResponder'
 
 ## VERY OWN ALIASES
 source ~/.bash_my_aliases
-alias bsd="ssh -v -i ~/.ssh/ec2freebsd.pem ec2-user@52.19.234.236"
-
-alias holidays_us="open /Users/lukmdo/Desktop/sL/hs2016.png"
-alias holidays_uk="open https://www.gov.uk/bank-holidays"
-alias gcalendar="open https://calendar.google.com"

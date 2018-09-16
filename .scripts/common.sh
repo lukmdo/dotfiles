@@ -59,3 +59,43 @@ ram () {
     vm_stat | awk -F: '/(free|wired|active)/ {print substr($1, 7), "\r\t\t", sprintf("%.f", ($2 * 4096) / 2^20)}';
     sysctl vm.swapusage
 }
+
+# gsub(\""\", \"\"); 
+# alias ip='curl -s httpbin.org/ip | awk "/origin/ {gsub(\"\\\"\", \"\"); print \$2}"'
+
+ncol () {
+  COLS=\$$*;            # prepend `$`
+  COLS=${COLS//,/,\$};  # s/,/,$/g
+  COLS=$(echo $COLS | sed 's/-\([0-9]*\)/(NF-\1+1)/g')
+  awk "{print $COLS}"
+}
+
+ttop () {
+  if [ "$1" = "-v" ] ;then
+    LONG_COMM="command";
+    NSEC=${2:-3};
+  else 
+    LONG_COMM="";
+    NSEC=${1:-3};
+  fi;
+      
+  watch -n $NSEC "
+    top -l1 | head -n1
+    echo;
+    ps ax -o %cpu,%mem,pid,etime,ucomm,${LONG_COMM} -r |head;
+    echo;
+    ps ax -o %mem,%cpu,pid,etime,ucomm,${LONG_COMM} -m |head;
+    echo;
+    printf \"%12s\n\" \"# COMMAND\";
+    ps ax -o ucomm,${LONG_COMM} |sort|uniq -c|sort -rn| head
+    ";
+}
+
+jira () {
+	if [ -z $1 ]; then
+		# new jira if no param 
+		open "https://saucedev.atlassian.net/secure/CreateIssue!default.jspa"
+	else		
+		open "https://saucedev.atlassian.net/browse/${1^^}"
+	fi;
+} 

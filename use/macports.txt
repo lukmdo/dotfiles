@@ -1,23 +1,31 @@
+# FILES
+tree
+unrar
+p7zip
+gzip
+watch
+dos2unix
+
+# NET
+tcptraceroute
+mtr
+wget
+curl
+links +x11
+mutt-devel
+
+# OTHER
 ack
 autoconf
 automake
 bash-completion
 R
-curl
-dos2unix
 erlang
 gawk
 gsed
-gzip
 htop
-links +x11
-mutt-devel
 nginx
 nodejs
-tree
-unrar
-watch
-wget
 
 
 # echo +bash_completion >> /opt/local/etc/macports/variants.conf 

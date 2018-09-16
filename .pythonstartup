@@ -1,4 +1,5 @@
-# python startup file 
+#!/usr/bin/env python 
+# startup file 
 import readline 
 import rlcompleter 
 import atexit 

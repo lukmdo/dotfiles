@@ -2,24 +2,29 @@ source $HOME/.bash_path
 
 export HOMEBREW_GITHUB_API_TOKEN="GITHUB_API_TOKEN"
 
-# include .bashrc if it exists
-if [ -f $HOME/.bashrc ]; then
-  source $HOME/.bashrc
-fi
+[[ -f ~/.bashrc ]] && source ~/.bashrc
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
+[[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 
-if [ -f $HOME/.bash_aliases ]; then 
-  source $HOME/.bash_aliases  
-fi
+# Bash completion
+[[ -f ~/.bash_completion ]] && source ~/.bash_completion
+[[ -f /opt/local/etc/profile.d/bash_completion.sh ]] && source /opt/local/etc/profile.d/bash_completion.sh
 
-if [ -f $HOME/.bash_prompt ]; then
-  source $HOME/.bash_prompt
-fi
+# AWS CLI
+[[ -f /usr/local/bin/aws_completer ]] && complete -C '/usr/local/bin/aws_completer' aws 
 
 if [ -f $HOME/.scripts/resty/resty ]; then
   source $HOME/.scripts/resty/resty
   ln -fs $HOME/.scripts/resty/pp $HOME/bin/
   ln -fs $HOME/.scripts/resty/pypp $HOME/bin/
 fi
+
+if [ -f $HOME/bin/skaffold ]; then 
+    eval "$(skaffold completion bash)"
+fi
+
+export GOPATH=$HOME/go
+export PATH="$PATH:$GOPATH/bin"
 
 # colorize grep
 export GREP_OPTIONS='--color=auto'
@@ -53,11 +58,4 @@ if [ "$?" -eq "0" ]; then
   export GITHUB_PASSWORD="PASS"
 fi
 
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-  . /opt/local/etc/profile.d/bash_completion.sh
-fi
 
-
-if [ -f /usr/local/bin/aws_completer ]; then
-  complete -C '/usr/local/bin/aws_completer' aws
-fi

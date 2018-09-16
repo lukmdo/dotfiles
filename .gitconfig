@@ -1,6 +1,6 @@
 [user]
-    name = Lukasz Dobrzanski
-    email = lukasz.m.dobrzanski@gmail.com
+	name = Lukasz Dobrzanski
+	email = lukasz.m.dobrzanski@gmail.com
 [core]
     excludesfile = ~/.gitignore_global
     editor = mate --wait
@@ -11,6 +11,8 @@
     status = auto
     branch = auto
     ui = auto
+[pager]
+    color = true
 [alias]
     b = branch
     bls = for-each-ref --sort="-committerdate" --format="%(authordate:short)%09%(refname:short)" refs/heads
@@ -22,8 +24,12 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
     st = status
-[pager]
-    color = true
+#[commit]
+#    gpgsign = true
+[push]
+    default = current
+[branch]
+    autosetuprebase = always
 [status]
     color = auto
 [diff]
@@ -32,9 +38,12 @@
     tool = vimdiff
 [rerere]
     enabled = true
-[push]
-    default = current
-[branch]
-    autosetuprebase = always
 # [hub]
 #     protocol = https
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http]
+	cookiefile = /Users/lukmdo/.gitcookies
