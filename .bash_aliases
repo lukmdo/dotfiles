@@ -61,6 +61,7 @@ alias gst='git status'
 alias gpr='PR=`git pull-request`; echo $PR; echo $PR|pbcopy'
 alias git-branches-cleanup='git branch --merged | grep -v "\*"| xargs -I {} sh -c "git push origin :{} ; git branch -d {}"'
 alias gg="git grep"
+alias open_mr="lab mr browse"
 
 ## RABBITMQ
 alias rabbit_start="sudo -H -u rabbitmq rabbitmq-server"
@@ -82,7 +83,6 @@ fi
 alias pypath="python -c 'from pprint import pprint; import sys; pprint(sys.path)'" # Show pythonpath
 alias ijython="jython $HOME/ENV@/java-readline/jipython/ipython-0.10/ipython.py"
 alias pbwww='pbpaste |python -c "import webbrowser, sys; map(lambda url: webbrowser.open(url.strip()), sys.stdin.readlines())"'
-alias ttop='watch  -n3 "ps caux -c |head|awk '\''{print \$3,\$4,\$NF}'\'' && echo && ps caux -m |head|awk '\''{print \$4,\$3,\$NF}'\'' " '
 alias make_ls_targets="awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print \$1}' Makefile | sort"
 alias topcoderArena="javaws http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp"
 

@@ -10,8 +10,8 @@ sync: clean vimtools
 vimtools:
 	@echo "---> Setup vim"
 	@mkdir -p "$(HOME)/.vim/plugin"
-	@-cp -n ./.vim/plugin/DirDiff.vim "$(HOME)/.vim/plugin/DirDiff.vim"
-	@-cp -n ./.vimrc "$(HOME)/" 
+	@-cp -vn .vim/plugin/DirDiff.vim "$(HOME)/.vim/plugin/DirDiff.vim"
+	@-cp -vn .vimrc "$(HOME)/"
 
 clean:
 	@echo "---> Removing temporary files"

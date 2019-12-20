@@ -10,6 +10,8 @@ export HOMEBREW_GITHUB_API_TOKEN="GITHUB_API_TOKEN"
 [[ -f ~/.bash_completion ]] && source ~/.bash_completion
 [[ -f /opt/local/etc/profile.d/bash_completion.sh ]] && source /opt/local/etc/profile.d/bash_completion.sh
 
+source <(cat ~/.bash_completion.d/*)
+
 # AWS CLI
 [[ -f /usr/local/bin/aws_completer ]] && complete -C '/usr/local/bin/aws_completer' aws 
 
@@ -59,3 +61,16 @@ if [ "$?" -eq "0" ]; then
 fi
 
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/lukmdo/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/lukmdo/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/lukmdo/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/lukmdo/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
+
+export PATH="$HOME/.cargo/bin:$PATH"

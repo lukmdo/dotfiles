@@ -54,6 +54,10 @@ acat () {
     hexdump -v -e '"%_c"' $* | gsed -e 's/\\n/\\n\n/g';
 }
 
+asum () {
+	awk '{sum += $1} END {print sum}'
+}
+
 ram () {
     # quick memory (free|wired|active) status info
     vm_stat | awk -F: '/(free|wired|active)/ {print substr($1, 7), "\r\t\t", sprintf("%.f", ($2 * 4096) / 2^20)}';

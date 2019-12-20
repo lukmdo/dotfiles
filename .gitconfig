@@ -1,6 +1,6 @@
 [user]
 	name = Lukasz Dobrzanski
-	email = lukasz.m.dobrzanski@gmail.com
+	email = code@lukmdo.com
 [core]
     excludesfile = ~/.gitignore_global
     editor = mate --wait
@@ -24,6 +24,7 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
     st = status
+	pushf = push --force-with-lease origin
 #[commit]
 #    gpgsign = true
 [push]

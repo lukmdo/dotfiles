@@ -23,8 +23,18 @@ if [ ${#ITEMS[@]} -eq 1 ] && [ -z "${ITEMS[0]}" ]; then
 fi
 
 for item in $ITEMS; do
+
+  # normalize
   case "$item" in
-    "." |".."|".git"|".//.git"|"Makefile"|README*|use*|"`basename $0`"|"macports.txt"|"other"|".pycharm_settings.jar" ) ;;
+    ".vim" )
+      # empty vim and vimdiff hisorty file
+      echo > $HOME/.vim/.netrwhist
+      ;;
+  esac
+
+  # process diff
+  case "$item" in
+    "." |".."|".DS_Store"|".git"|".//.git"|"Makefile"|README*|use*|"`basename $0`"|"macports.txt"|"other"|".pycharm_settings.jar" ) ;;
     * )
       diff -q "$HOME/$item" "./$item" 1>/dev/null 2>/dev/null
       if [ "$?" -eq "0" ]; then 
