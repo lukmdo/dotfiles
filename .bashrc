@@ -32,7 +32,7 @@ if [ "$TERM" != "dumb" ]; then
 fi
 
 if [ -f /etc/bash_completion ]; then . /etc/bash_completion; fi
-if [ -f ~/.scripts/common.sh ]; then . ~/.scripts/common.sh; fi
+if [ -f ~/.bash_functions ]; then . ~/.bash_functions; fi
 if [ -f ~/.git_completion.sh ]; then . ~/.git_completion.sh; fi
 if [ -f ~/.hub.bash_completion.sh ]; then . ~/.hub.bash_completion.sh; fi
-if [ -f ~/.hg_completion ];     then . ~/.hg_completion; fi
+if [ -f ~/.hg_completion ]; then . ~/.hg_completion; fi

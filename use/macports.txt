@@ -1,31 +1,42 @@
-# FILES
-tree
-unrar
-p7zip
-gzip
-watch
-dos2unix
+# sudo port uninstall leaves
+#
+# sudo port -fp uninstall installed
+#
+# run zsh AND sudo /opt/local/bin/port selfupdate && sudo /opt/local/bin/port -N install bash 
+#
+# sudo port -N install $(cat ~/dotfiles/use/macports.txt | egrep '^\w' | tr '\n' ' ')
 
-# NET
-tcptraceroute
-mtr
-wget
-curl
-links +x11
-mutt-devel
-
-# OTHER
 ack
 autoconf
 automake
+bash
 bash-completion
-R
-erlang
+cmake
+curl
+diffutils
+dos2unix
+# erlang
 gawk
+git
+git-lfs
 gsed
+gzip
 htop
+ipcalc
+jq
+# links +x11
+mtr
+# mutt-devel
 nginx
-nodejs
-
-
-# echo +bash_completion >> /opt/local/etc/macports/variants.conf 
+openssl
+parallel
+R
+# tcptraceroute
+tmate
+tmux
+tmux-pasteboard
+tree
+unrar
+watch
+wget
+ImageMagick
