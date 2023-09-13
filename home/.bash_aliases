@@ -30,10 +30,10 @@ alias apache_stop="sudo /etc/init.d/apache2"
 alias apache_log="sudo vim /var/log/apache2/error.log"
 
 ## DJANGO ALIASES
-alias rs="python manage.py runserver --settings=$DJANGO_SETTINGS_MODULE"
-alias sdb="python manage.py syncdb --settings=$DJANGO_SETTINGS_MODULE"
-alias dshell="django-admin.py shell --settings=$DJANGO_SETTINGS_MODULE"
-alias dtest="django-admin.py test --settings=$DJANGO_SETTINGS_MODULE"
+#alias rs="python manage.py runserver --settings=$DJANGO_SETTINGS_MODULE"
+#alias sdb="python manage.py syncdb --settings=$DJANGO_SETTINGS_MODULE"
+#alias dshell="django-admin.py shell --settings=$DJANGO_SETTINGS_MODULE"
+#alias dtest="django-admin.py test --settings=$DJANGO_SETTINGS_MODULE"
 
 ## MYSQL ALIASES
 alias mysql_restart="sudo /etc/init.d/mysql restart"
@@ -44,7 +44,7 @@ alias mysql_stop="sudo /etc/init.d/mysql stop"
 alias postgresql_restart="sudo /etc/init.d/postgresql-8.3 restart"
 
 ## GIT ALIASES
-alias git='hub'
+#alias git='hub'
 alias g='git'
 alias gb='git branch'
 alias gba='git branch -a'  
@@ -80,6 +80,7 @@ fi
 
 
 ## OWN ALIASES
+alias chrome="open -a 'Google Chrome'"
 alias pypath="python -c 'from pprint import pprint; import sys; pprint(sys.path)'" # Show pythonpath
 alias ijython="jython $HOME/ENV@/java-readline/jipython/ipython-0.10/ipython.py"
 alias pbwww='pbpaste |python -c "import webbrowser, sys; map(lambda url: webbrowser.open(url.strip()), sys.stdin.readlines())"'
@@ -115,14 +116,15 @@ alias nmax='count | head'
 alias nmin='count | tail'
 alias pname='awk -v ORS=" " "{ print \$0; system(\"ps -o comm= -p\" \$NF) }"'
 
-# time 
-alias stamp='xargs -L1 echo $(date "+%H:%M:%S")'
-alias rush='time timeout $*' # rush 10 sleep 12 
+# time
 alias date_utc="date -u"
 alias date_sf="TZ=America/Los_Angeles date"
 alias date_uk="TZ=Europe/London date"
 alias date_pl="TZ=Europe/Warsaw date"
 alias date_am="TZ=Asia/Yerevan date"
+alias date_stamp="date +%Y%m%dT%H%M%S"
+alias stamp='xargs -L1 echo $(date "+%H:%M:%S")'
+alias rush='time timeout $*' # rush 10 sleep 12 
 
 # networking 
 alias ip='curl -s httpbin.org/ip | awk "/origin/ {gsub(\"\\\"\", \"\"); print \$2}"'

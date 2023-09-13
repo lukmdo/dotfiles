@@ -1,34 +1,35 @@
 source $HOME/.bash_path
 
+# hide zsh info: https://support.apple.com/en-gb/HT208050
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 export HOMEBREW_GITHUB_API_TOKEN="GITHUB_API_TOKEN"
 
 [[ -f ~/.bashrc ]] && source ~/.bashrc
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 
-# Bash completion
-[[ -f ~/.bash_completion ]] && source ~/.bash_completion
-[[ -f /opt/local/etc/profile.d/bash_completion.sh ]] && source /opt/local/etc/profile.d/bash_completion.sh
+# hook up any bash completion tooling
+source ~/bash_completion
 
-source <(cat ~/.bash_completion.d/*)
+# source <(cat ~/.bash_completion.d/*)
 
-# AWS CLI
-[[ -f /usr/local/bin/aws_completer ]] && complete -C '/usr/local/bin/aws_completer' aws 
 
-if [ -f $HOME/.scripts/resty/resty ]; then
-  source $HOME/.scripts/resty/resty
-  ln -fs $HOME/.scripts/resty/pp $HOME/bin/
-  ln -fs $HOME/.scripts/resty/pypp $HOME/bin/
-fi
-
-if [ -f $HOME/bin/skaffold ]; then 
-    eval "$(skaffold completion bash)"
-fi
+### SETUP LANGS
 
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 
-# colorize grep
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+### SETUP TOOLS
+
+# colours for grep
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
@@ -46,20 +47,20 @@ if [ -n "$VIRTUALENVWRAPPER" ];then
   source "$VIRTUALENVWRAPPER"
 fi
 
-SMSGATES_BOOTSTRAP=`which smsgates_bootstrap.sh`
-if [ "$?" -eq "0" ]; then
-  export SMSGATES_SENDSMS_GATE="GATENAME"
-  export SMSGATES_SENDSMS_LOGIN="LOGIN"
-  export SMSGATES_SENDSMS_PASSWORD="PASSWORD"
-  source "$SMSGATES_BOOTSTRAP"
-fi
+#SMSGATES_BOOTSTRAP=`which smsgates_bootstrap.sh`
+#if [ "$?" -eq "0" ]; then
+#  export SMSGATES_SENDSMS_GATE="GATENAME"
+#  export SMSGATES_SENDSMS_LOGIN="LOGIN"
+#  export SMSGATES_SENDSMS_PASSWORD="PASSWORD"
+#  source "$SMSGATES_BOOTSTRAP"
+#fi
 
-HUB=`which hub`
-if [ "$?" -eq "0" ]; then
-  export GITHUB_USER="USER"
-  export GITHUB_PASSWORD="PASS"
-fi
-
+# disable hub - see `gh` https://cli.github.com
+#HUB=`which hub`
+#if [ "$?" -eq "0" ]; then
+#  export GITHUB_USER="USER"
+#  export GITHUB_PASSWORD="PASS"
+#fi
 
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -68,9 +69,15 @@ if [ -f '/Users/lukmdo/Downloads/google-cloud-sdk/path.bash.inc' ]; then source 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/lukmdo/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/lukmdo/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
-# Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-export PATH
+# AWS CLI
+[[ -f /usr/local/bin/aws_completer ]] && complete -C '/usr/local/bin/aws_completer' aws 
 
-export PATH="$HOME/.cargo/bin:$PATH"
+if [ -f $HOME/.scripts/resty/resty ]; then
+  source $HOME/.scripts/resty/resty
+  ln -fs $HOME/.scripts/resty/pp $HOME/bin/
+  ln -fs $HOME/.scripts/resty/pypp $HOME/bin/
+fi
+
+if [ -f $HOME/bin/skaffold ]; then 
+    eval "$(skaffold completion bash)"
+fi
