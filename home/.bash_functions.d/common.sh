@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # ----------- svn shortcuts ------------
 svndiff () { svn di $* | vim -; }
 st () { svn st $*; }
@@ -98,8 +100,12 @@ ttop () {
 jira () {
 	if [ -z $1 ]; then
 		# new jira if no param 
-		open "https://saucedev.atlassian.net/secure/CreateIssue!default.jspa"
+		chrome "https://saucedev.atlassian.net/secure/CreateIssue!default.jspa"
 	else		
-		open "https://saucedev.atlassian.net/browse/${1^^}"
+		chrome "https://saucedev.atlassian.net/browse/${1^^}"
 	fi;
 } 
+
+__ () {
+	open "dash://$1$2$3"
+}
