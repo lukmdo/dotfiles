@@ -11,23 +11,8 @@ export HOMEBREW_GITHUB_API_TOKEN="GITHUB_API_TOKEN"
 
 # hook up any bash completion tooling
 source ~/bash_completion
-
 # source <(cat ~/.bash_completion.d/*)
 
-
-### SETUP LANGS
-
-export GOPATH=$HOME/go
-export PATH="$PATH:$GOPATH/bin"
-
-# Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-export PATH
-
-export PATH="$HOME/.cargo/bin:$PATH"
-
-### SETUP TOOLS
 
 # colours for grep
 export GREP_OPTIONS='--color=auto'
@@ -35,7 +20,7 @@ export GREP_COLOR='1;32'
 
 # -----------------------
 # virtualenvwrapper Stuff
-## To tell pip to only run if there is a virtualenv currently activated, and to bail if not
+## To tell pip to only run if there is a virtualenv currently activated and to bail if not
 export PIP_REQUIRE_VIRTUALENV=true                                 
 
 VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
