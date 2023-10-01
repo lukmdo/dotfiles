@@ -3,26 +3,25 @@ source $HOME/.bash_path
 # hide zsh info: https://support.apple.com/en-gb/HT208050
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-export HOMEBREW_GITHUB_API_TOKEN="GITHUB_API_TOKEN"
+#export HOMEBREW_GITHUB_API_TOKEN="GITHUB_API_TOKEN"
 
-[[ -f ~/.bashrc ]] && source ~/.bashrc
-[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
-[[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
+source ~/.bashrc
+source ~/.bash_aliases
+source ~/.bash_prompt
+source <(cat ~/.bash_functions.d/*.sh)  # note: source with *glob wont work
+source ~/.bash_completion
 
-# hook up any bash completion tooling
-source ~/bash_completion
-# source <(cat ~/.bash_completion.d/*)
-
-
-# colours for grep
+# Colours for grep
+# ===
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-# -----------------------
-# virtualenvwrapper Stuff
-## To tell pip to only run if there is a virtualenv currently activated and to bail if not
-export PIP_REQUIRE_VIRTUALENV=true                                 
+# VirtualEnvWrapper config
+# ===
+# Allow pip to run only with activated virtualenv.
+export PIP_REQUIRE_VIRTUALENV=true
 
+export VIRTUALENVWRAPPER_PYTHON=`which python3`
 VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
 if [ -n "$VIRTUALENVWRAPPER" ];then
   if [ ! -d "$HOME/.virtualenvs" ];then mkdir "$HOME/.virtualenvs";fi
@@ -48,21 +47,10 @@ fi
 #fi
 
 
+## NOTE: gcloud auto added bellow
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/lukmdo/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/lukmdo/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/lukmdo/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/lukmdo/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-
-# AWS CLI
-[[ -f /usr/local/bin/aws_completer ]] && complete -C '/usr/local/bin/aws_completer' aws 
-
-if [ -f $HOME/.scripts/resty/resty ]; then
-  source $HOME/.scripts/resty/resty
-  ln -fs $HOME/.scripts/resty/pp $HOME/bin/
-  ln -fs $HOME/.scripts/resty/pypp $HOME/bin/
-fi
-
-if [ -f $HOME/bin/skaffold ]; then 
-    eval "$(skaffold completion bash)"
-fi

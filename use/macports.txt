@@ -1,8 +1,8 @@
-# sudo port uninstall leaves
+# Uninstall
+#   sudo port -fp uninstall installed
 #
-# sudo port -fp uninstall installed
-#
-# run zsh AND sudo /opt/local/bin/port selfupdate && sudo /opt/local/bin/port -N install bash 
+# Run zsh and install bash
+#   sudo /opt/local/bin/port selfupdate && sudo /opt/local/bin/port -N install bash
 #
 # sudo port -N install $(cat ~/dotfiles/use/macports.txt | egrep '^\w' | tr '\n' ' ')
 
@@ -28,6 +28,7 @@ jq
 mtr
 # mutt-devel
 nginx
+macos-trash
 openssl
 parallel
 R
@@ -40,3 +41,4 @@ unrar
 watch
 wget
 ImageMagick
+7zip

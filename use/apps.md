@@ -1,36 +1,35 @@
-In Use
-======
-
-- IRC [colloquy](http://colloquy.info/)
-- IDE's [jetbrains](www.jetbrains.com) sold
-- IM [adium](http://adium.im/) + mac Messages
-- [textmate2](https://github.com/textmate/textmate/downloads)
-- [CleanApp](http://www.syniumsoftware.com/cleanapp/)
+## In Use
+- [Dash](https://kapeli.com/dash) Offline docs, cheatsheets, text snippets
+  - _note:_ Dash-6 has license, Dash-7 is subscription  
+  - [x] in settings setup sync folder - Dropbox/dash (has Dash.dashsync)
+  - [x] enable Dash in "Privacy > Accessibility" 
+- [jetbrains](www.jetbrains.com) IDE
+- [textmate2](https://github.com/textmate/textmate/downloads) hany secondary editor
 - chrome (+list extensions)
-- VPN [vicsonsy](http://www.sparklabs.com/viscosity/)
-- Web snapping [LittleSnapper](http://www.realmacsoftware.com/littlesnapper/)
-- Screen Shots Sharing [tinygrab](http://tinygrab.com/)
-- [KeyNote](https://itunes.apple.com/ie/app/keynote/id409183694?mt=12)
-- System monitor [istatmenus](http://bjango.com/mac/istatmenus/)
-- GPG [gpgtools](https://gpgtools.org) + http://support.gpgtools.org/discussions/problems/11154-multiple-messages
-- Expandable snippents [TextExpander](http://smilesoftware.com/TextExpander/index.html)
-- Manage windows with [SpectacleApp](http://spectacleapp.com)
-- Smippets with [TextExpander](http://smilesoftware.com/TextExpander/index.html)
-- OS etc Monitor [istatmenus](http://bjango.com/mac/istatmenus/) 
-- Proxy / Inspector [charles proxy](http://www.charlesproxy.com)
-- Offline docs [Dash](https://kapeli.com/dash)
+- [gpgtools](https://gpgtools.org) GPG + http://support.gpgtools.org/discussions/problems/11154-multiple-messages
+- [SpectacleApp](http://spectacleapp.com) Manage windows
+- [charles proxy](http://www.charlesproxy.com) Proxy / Inspector 
 
-Fun
-===
 
+## Fun
 - Image annotating [Skitch](https://itunes.apple.com/ie/app/skitch/id425955336?mt=12)
-- Screencasts [Jing](http://www.techsmith.com/jing.html)
+
+## For review (or out of use)
+
+- [tinygrab](http://tinygrab.com/) Screen Shots Sharing 
+- [Jing](http://www.techsmith.com/jing.html) Screencasts 
+- [LittleSnapper](http://www.realmacsoftware.com/littlesnapper/) Web snapping 
+- [istatmenus](http://bjango.com/mac/istatmenus/) System monitor 
+- [TextExpander](http://smilesoftware.com/TextExpander/index.html) Expandable snippents  
+- [CleanApp](http://www.syniumsoftware.com/cleanapp/)
+- [colloquy](http://colloquy.info/) IRC
+- [adium](http://adium.im/) IM  + mac Messages 
 - [twitter](https://itunes.apple.com/ie/app/twitter/id409789998?mt=12) 
 - [twitter Tools](https://gist.github.com/lukmdo/9801788)
+- [vicsonsy](http://www.sparklabs.com/viscosity/) VPN
 
-To TryOut
-=========
 
+## To TryOut
 - Productivity/time management [concent](http://www.getconcentrating.com/)
 - Music [Rdio](http://www.rdio.com/)
 - scrrencast [screenflow](http://www.telestream.net/screenflow)
