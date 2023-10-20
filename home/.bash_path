@@ -1,23 +1,23 @@
 ### SETUP SYS PATHS
-export PATH="${HOME}/bin:${HOME}/ENV/bin:${PATH}"
-export PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
-export PATH="/usr/local/bin:${PATH}"
+export PATH="$HOME/bin:$HOME/ENV/bin:$PATH"
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 
 ### SETUP LANG PATHS
-export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-
+export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 
 
 ### SETUP TOOLS PATHS
 export PATH="$HOME/.cargo/bin:$PATH"
-export CDPATH=".:${HOME}/PycharmProjects/:/usr/local/google_appengine/"
-export MANPATH="${HOME}/ENV/man/:${HOME}/ENV/share/man/:$MANPATH"
+export PATH="$HOME/.krew/bin:$PATH"
+export CDPATH=".:$HOME/PycharmProjects/:/usr/local/google_appengine/"
+export MANPATH="$HOME/ENV/man/:$HOME/ENV/share/man/:$MANPATH"
 
 #export PERL5LIB="$HOME/ENV/lib/perl5/site_perl/5.8.9/:$PERL5LIB"
 # ack,stow etc.

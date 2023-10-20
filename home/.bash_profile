@@ -21,7 +21,7 @@ export GREP_COLOR='1;32'
 # Allow pip to run only with activated virtualenv.
 export PIP_REQUIRE_VIRTUALENV=true
 
-export VIRTUALENVWRAPPER_PYTHON=`which python3`
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
 if [ -n "$VIRTUALENVWRAPPER" ];then
   if [ ! -d "$HOME/.virtualenvs" ];then mkdir "$HOME/.virtualenvs";fi
@@ -48,9 +48,10 @@ fi
 
 
 ## NOTE: gcloud auto added bellow
+export CLOUDSDK_PYTHON=$(which python3)
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/lukmdo/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/lukmdo/Downloads/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/Users/lukmdo/env/google-cloud-sdk/path.bash.inc' ]; then . '/Users/lukmdo/env/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/lukmdo/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/lukmdo/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/Users/lukmdo/env/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/lukmdo/env/google-cloud-sdk/completion.bash.inc'; fi
