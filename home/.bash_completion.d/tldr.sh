@@ -6,7 +6,7 @@ _tealdeer()
 	_init_completion || return
 
 	case $prev in
-		-h|--help|-v|--version|-l|--list|-u|--update|-c|--clear-cache|-p|--pager|-r|--raw|--show-paths|--seed-config|-q|--quiet)
+		-h|--help|-v|--version|-l|--list|-u|--update|--no-auto-update|-c|--clear-cache|--pager|-r|--raw|--show-paths|--seed-config|-q|--quiet)
 			return
 			;;
 		-f|--render)
@@ -14,7 +14,7 @@ _tealdeer()
 			return
 			;;
 		-p|--platform)
-			COMPREPLY=( $(compgen -W 'linux macos sunos windows' -- "${cur}") )
+			COMPREPLY=( $(compgen -W 'linux macos sunos windows android' -- "${cur}") )
 			return
 			;;
 		--color)
@@ -27,8 +27,9 @@ _tealdeer()
 		COMPREPLY=( $( compgen -W '$( _parse_help "$1" )' -- "$cur" ) )
 		return
 	fi
-
-	COMPREPLY=( $(compgen -W '$( tldr -l | tr -d , )' -- "${cur}") )
+	if tldrlist=$(tldr -l 2>/dev/null); then
+		COMPREPLY=( $(compgen -W '$( echo "$tldrlist" | tr -d , )' -- "${cur}") )
+	fi
 }
 
 complete -F _tealdeer tldr
