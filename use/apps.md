@@ -1,15 +1,18 @@
 ## In Use
 - [Dash](https://kapeli.com/dash) Offline docs, cheatsheets, text snippets
-  - _note:_ Dash-6 has license, Dash-7 is subscription  
-  - [x] in settings setup sync folder - Dropbox/dash (has Dash.dashsync)
-  - [x] enable Dash in "Privacy > Accessibility" 
+  - _note:_ [Dash-6](https://blog.kapeli.com/dash-6/) has license, Dash-7 is subscription  
+  - [x] in settings setup sync folder - Dropbox/dash (has `Dash.dashsync`)
+  - [x] enable Dash in "Privacy > Accessibility"
+- [hammerspoon](https://www.hammerspoon.org/#how-do-i-install-it) and see `home/.hammerspoon` LINK
 - [jetbrains](www.jetbrains.com) IDE
 - [textmate2](https://github.com/textmate/textmate/downloads) hany secondary editor
 - chrome (+list extensions)
 - [gpgtools](https://gpgtools.org) GPG + http://support.gpgtools.org/discussions/problems/11154-multiple-messages
 - [SpectacleApp](http://spectacleapp.com) Manage windows
-- [charles proxy](http://www.charlesproxy.com) Proxy / Inspector 
-
+- [charles proxy](http://www.charlesproxy.com) Proxy / Inspector
+- [MacTeX](https://www.tug.org/mactex/mactex-download.html) includes:
+  - [TeXShop](http://pages.uoregon.edu/koch/texshop) editor (turn on auto updates)
+  - [Tex Live Utility](https://amaxwell.github.io/tlutility/) for TeX pkg updates 
 
 ## Fun
 - Image annotating [Skitch](https://itunes.apple.com/ie/app/skitch/id425955336?mt=12)

@@ -11,6 +11,7 @@ autoconf
 automake
 bash
 bash-completion
+cheat
 cmake
 curl
 diffutils
@@ -28,11 +29,15 @@ jq
 mtr
 # mutt-devel
 nginx
-macos-trash
+# macos-trash
 openssl
 parallel
+# confirm in sync with `port select python3`
+py310-virtualenvwrapper
 R
+stow
 # tcptraceroute
+tealdeer
 tmate
 tmux
 tmux-pasteboard
@@ -42,3 +47,4 @@ watch
 wget
 ImageMagick
 7zip
+
