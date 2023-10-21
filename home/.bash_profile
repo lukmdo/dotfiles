@@ -22,7 +22,7 @@ export GREP_COLOR='1;32'
 export PIP_REQUIRE_VIRTUALENV=true
 
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
+VIRTUALENVWRAPPER=$(which virtualenvwrapper.sh)
 if [ -n "$VIRTUALENVWRAPPER" ];then
   if [ ! -d "$HOME/.virtualenvs" ];then mkdir "$HOME/.virtualenvs";fi
   export WORKON_HOME="$HOME/.virtualenvs"
