@@ -34,6 +34,8 @@ openssl
 parallel
 # confirm in sync with `port select python3`
 py310-virtualenvwrapper
+# rlwrap for `cht.sh --shell` support
+rlwrap
 R
 stow
 # tcptraceroute
