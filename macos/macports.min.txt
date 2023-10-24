@@ -1,0 +1,12 @@
+# minimalistic version of macports.txt
+
+bash
+bash-completion
+curl
+dos2unix
+git
+gsed
+gzip
+# confirm in sync with `port select python3`
+py310-virtualenvwrapper
+stow
