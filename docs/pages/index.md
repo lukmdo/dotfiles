@@ -1,0 +1,212 @@
+# Intro
+Setup config/dotfiles. See [home]() for contents.
+
+???- info "[stow](https://www.gnu.org/software/stow/) manages symlinks 🫶 to `git` repo - helps automate _"sync"_ and _"conflict resolution"_."
+    [stow (GNU Stow)](https://www.gnu.org/software/stow/)
+
+    SYNOPSIS:
+
+        stow [OPTION ...] [-D|-S|-R] PACKAGE ...
+
+    OPTIONS:
+
+        -d DIR, --dir=DIR     Set stow dir to DIR (default is current dir)
+        -t DIR, --target=DIR  Set target to DIR (default is parent of stow dir)
+
+        -S, --stow            Stow the package names that follow this option
+        -D, --delete          Unstow the package names that follow this option
+        -R, --restow          Restow (like stow -D followed by stow -S)
+
+        --ignore=REGEX        Ignore files ending in this Perl regex
+        --defer=REGEX         Don't stow files beginning with this Perl regex
+                              if the file is already stowed to another package
+        --override=REGEX      Force stowing files beginning with this Perl regex
+                              if the file is already stowed to another package
+        --adopt               (Use with care!)  Import existing files into stow package
+                              from target.  Please read docs before using.
+        -p, --compat          Use legacy algorithm for unstowing
+
+        -n, --no, --simulate  Do not actually make any filesystem changes
+        -v, --verbose[=N]     Increase verbosity (levels are from 0 to 5;
+                                -v or --verbose adds 1; --verbose=N sets level)
+        -V, --version         Show stow version number
+        -h, --help            Show this help
+
+## TL;DR - Summary Version
+
+???- info "all commands"
+    ```shell
+    git clone git@github.com:lukmdo/dotfiles.git
+    cd dotfiles
+
+    ## 1) MacPorts
+    xcode-select --install
+    # install Xcode from AppStore, then
+    sudo xcodebuild -license accept
+    sudo xcodebuild -runFirstLaunch
+    sudo port selfupdate
+    sudo port -N install $(\
+      cat macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
+
+    ## 2) Terminal
+    open macos/CustomTerminalSettings.terminal
+    defaults write com.apple.terminal "Default Window Settings" -string "CustomTerminalSettings"
+    defaults write com.apple.Terminal "Startup Window Settings" -string "CustomTerminalSettings"
+
+    ## 3) Bash
+    stow -t ~ --restow home
+    scripts/update_bash_completion.sh
+    ```
+
+## Key Components
+
+<!-- idea: add tree diagram ? -->
+
+!!! warning "Best Run in Order"
+
+    Note: "add-on" components can be skipped.
+
+    1. [macports](#macports)
+    2. add-on: [macOS X](#todo-macos-x) (via [defaults]())
+    3. add-on: [standalone tools](#todo-standalone-tools)
+        - [CLI's]()
+        - [Apps]()
+        - IDE
+    4. [terminal](#todo-terminal)
+    5. [bash glue](#bash-glue)
+
+### MacPorts
+
+Install required dependencies.
+```
+xcode-select --install
+
+# install Xcode from AppStore, then
+sudo xcodebuild -license accept
+sudo xcodebuild -runFirstLaunch
+```
+
+Install [macports](https://www.macports.org/install.php) utility (adds `port` command).
+
+Finally, will install selected ports:
+
+- [macos/macports.txt]()
+- alternative: minimalistic [macos/macports.min.txt]()
+
+=== "simulate"
+    ```sh
+    # see full command
+    echo port -N install $(\
+      cat ~/dotfiles/macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
+
+    # dry run `-y`
+    port -y -N install $(\
+      cat ~/dotfiles/macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
+    ```
+
+=== "run"
+    ```sh
+    sudo port selfupdate
+    sudo port -N install $(\
+      cat ~/dotfiles/macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
+    ```
+
+=== "verify"
+    ```shell
+    port echo requested
+    port echo requested and installed
+    ```
+<!---
+```
+# specific to python virtualenvwrapper and requires stow to run
+lsvirtualenv -b | head
+echo $WORKON_HOME
+ls -l $WORKON_HOME
+```
+-->
+
+### TODO: macOS X
+* defaults
+  * app shortcuts
+* crontab (load) from .config/.crontab
+
+### TODO: standalone tools
+### Terminal
+
+Load custom settings and set as default.
+```shell
+open dotfiles/macos/CustomTerminalSettings.terminal
+defaults write com.apple.terminal "Default Window Settings" -string "CustomTerminalSettings"
+defaults write com.apple.Terminal "Startup Window Settings" -string "CustomTerminalSettings"
+```
+
+### Bash Glue
+Main file is [.bash_profile]() which sources
+
+- [.bash_path]()
+- [.bashrc]()
+- [.bash_aliases]()
+- [.bash_prompt]()
+- [.bash_completion]()
+- [.bash_functions.d]()
+
+Run this to hook [home]() dir items in `$HOME` ( all via symlinks 🫶 ) :
+
+=== "simulate"
+    ```sh
+    # dry run `-n`, verbose `-v`
+    stow -n -v -t ~ --restow home
+    ```
+
+=== "run"
+    ```sh
+    stow -t ~ --restow home
+    ```
+=== "verify"
+    ```
+    ls -la $HOME
+
+    lrwxr-xr-x  .bash_aliases -> dotfiles/home/.bash_aliases
+    lrwxr-xr-x  .bash_completion -> dotfiles/home/.bash_completion
+    lrwxr-xr-x  .bash_completion.d -> dotfiles/home/.bash_completion.d
+    lrwxr-xr-x  .bash_functions.d -> dotfiles/home/.bash_functions.d
+    lrwxr-xr-x  .bash_path -> dotfiles/home/.bash_path
+    lrwxr-xr-x  .bash_profile -> dotfiles/home/.bash_profile
+    lrwxr-xr-x  .bash_prompt -> dotfiles/home/.bash_prompt
+    lrwxr-xr-x  .bashrc -> dotfiles/home/.bashrc
+    lrwxr-xr-x  .stow-global-ignore -> dotfiles/home/.stow-global-ignore
+    ...
+    ```
+
+<!--
+other ...
+```
+stow -n -v -t ~ --stow home
+stow -n -v -t ~ --adopt home  # (1)!
+```
+
+    1. `--adopt` is handy for import: _$HOME_ to _dotfiles/home_
+-->
+
+
+!!! info "Optional/recommended: Update completion scripts"
+
+    Update `home/.bash_completion.d/*.sh` shell completion scripts.
+    === "run"
+        ```shell
+        scripts/update_bash_completion.sh
+        ```
+    === "Example output"
+        ```shell
+        Updating:
+
+	        home/.bash_completion.d/cheat.sh_update.sh ... ✅
+	        home/.bash_completion.d/cht.sh_update.sh ... ✅
+            home/.bash_completion.d/kubectl.sh_update.sh ... ✅
+            ...
+
+        Status: (dotfiles - git status)
+
+            On branch master
+            nothing to commit, working tree clean
+        ```

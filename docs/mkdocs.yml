@@ -1,0 +1,82 @@
+site_name: dotfiles
+docs_dir: pages
+
+site_url: https://lukmdo.github.io/dotfiles/
+site_description: TODO-description
+site_author: lukmdo
+copyright: lukmdo (DATES?)
+repo_name: lukmdo/dotfiles
+repo_url: https://github.com/lukmdo/dotfiles
+edit_uri: edit/master/docs/pages
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: custom
+      custom_format: "%Y-%m-%d"
+
+
+theme:
+  name: material
+  icon:
+    annotation: material/arrow-right-circle
+    repo: fontawesome/brands/github
+    edit: material/pencil-circle-outline
+    view: material/eye-circle-outline
+  language: en
+
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.code.copy
+    - content.code.select # $$
+    - content.code.annotate
+#    - navigation.sections
+#    - navigation.path
+#    - navigation.instant
+##    - navigation.instant.prefetch
+#    - navigation.tabs
+#    - navigation.tabs.sticky
+##    - navigation.prune
+  #font:
+#    text: Roboto
+
+
+#extra_css:
+#  - stylesheets/extra.css
+
+extra_css:
+  - assets/extra.css
+
+extra:
+  generator: false
+#    annotate:
+#      json: [.s2]
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lukmdo
+      name: github/lukmdo
+
+
+
+markdown_extensions:
+  - admonition
+  - attr_list
+#  - def_list:
+
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist
+#      custom_checkbox: true
+  - toc:
+      title: Page Contents
+      permalink: true

@@ -1,0 +1,29 @@
+/* compact headings */
+.md-typeset h1 {
+    margin: 0;
+}
+
+.md-typeset h2, .md-typeset h3, .md-typeset h4 {
+    margin: 0.5em 0 0;
+}
+
+h1, h2, h3, h4 {
+    margin-block-start: 0.13em;
+    margin-block-end: 0.13em;
+}
+
+
+/* compact lists (default: 0.5em) */
+.md-typeset ol, .md-typeset ul {
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+}
+
+.md-typeset ol li, .md-typeset ul li {
+    margin-bottom: 0.1em;
+}
+
+.md-typeset ol li ol, .md-typeset ol li ul, .md-typeset ul li ol, .md-typeset ul li ul {
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+}
