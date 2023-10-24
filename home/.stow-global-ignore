@@ -1,0 +1,9 @@
+ \.DS_Store
+\.git
+.*~$
+
+# note:
+# Linked `home/.stow-global-ignore -> home/.stow-local-ignore` to bootstap
+# and ignore items from "home" <pkg> as stow:
+# - looks at `~/.stow-global-ignore` and <pkg>/.stow-local-ignore
+# - ignores `<pkg>/.stow-global-ignore` (but will link it as expected)
