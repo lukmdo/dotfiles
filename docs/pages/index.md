@@ -34,12 +34,13 @@ Setup config/dotfiles. See [home]() for contents.
 
 ## TL;DR - Summary Version
 
-???- info "all commands"
+??? abstract "all.sh commands"
+
     ```shell
     git clone git@github.com:lukmdo/dotfiles.git
     cd dotfiles
 
-    ## 1) MacPorts
+    ## MacPorts
     xcode-select --install
     # install Xcode from AppStore, then
     sudo xcodebuild -license accept
@@ -48,12 +49,17 @@ Setup config/dotfiles. See [home]() for contents.
     sudo port -N install $(\
       cat macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
 
-    ## 2) Terminal
+    ## Terminal
     open macos/CustomTerminalSettings.terminal
     defaults write com.apple.terminal "Default Window Settings" -string "CustomTerminalSettings"
     defaults write com.apple.Terminal "Startup Window Settings" -string "CustomTerminalSettings"
 
-    ## 3) Bash
+    ## MacOS defaults
+    macos/set_defaults.sh
+
+    ## Bash
+    echo /opt/local/bin/bash | sudo tee -a /etc/shells
+    chsh -s /opt/local/bin/bash
     stow -t ~ --restow home
     scripts/update_bash_completion.sh
     ```
@@ -126,8 +132,14 @@ ls -l $WORKON_HOME
 -->
 
 ### TODO: macOS X
-* defaults
-  * app shortcuts
+```shell
+macos/set_defaults.sh
+```
+repo_url_to("macos/set_defaults.sh")
+
+Then:
+
+* app shortcuts
 * crontab (load) from .config/.crontab
 
 ### TODO: standalone tools
@@ -141,7 +153,12 @@ defaults write com.apple.Terminal "Startup Window Settings" -string "CustomTermi
 ```
 
 ### Bash Glue
-Main file is [.bash_profile]() which sources
+
+Allow custom shell and set as default.
+```shell
+echo /opt/local/bin/bash | sudo tee -a /etc/shells
+chsh -s /opt/local/bin/bash
+```
 
 - [.bash_path]()
 - [.bashrc]()
