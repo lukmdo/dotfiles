@@ -47,7 +47,7 @@ alias postgresql_restart="sudo /etc/init.d/postgresql-8.3 restart"
 #alias git='hub'
 alias g='git'
 alias gb='git branch'
-alias gba='git branch -a'  
+alias gba='git branch -a'
 alias gbd="git branch -d"
 alias gbls='git for-each-ref --sort="-committerdate" --format="%(authordate:short)%09%(refname:short)" refs/heads | head'
 alias gc='git commit -v'
@@ -72,7 +72,7 @@ alias flow_from="sudo tcpflow -c -i lo tcp port 8080 | grep From:"
 alias flow_agent="sudo tcpflow -c -i lo tcp port 8080 | grep User-Agent:"
 alias flow_location="sudo tcpflow -c -i lo tcp port 8080 | grep Location:"
 
-## OS X tools for Linux 
+## OS X tools for Linux
 if [ ! $(uname -s) = "Darwin" ]; then
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
@@ -124,12 +124,14 @@ alias date_pl="TZ=Europe/Warsaw date"
 alias date_am="TZ=Asia/Yerevan date"
 alias date_stamp="date +%Y%m%dT%H%M%S"
 alias stamp='xargs -L1 echo $(date "+%H:%M:%S")'
-alias rush='time timeout $*' # rush 10 sleep 12 
+alias rush='time timeout $*' # rush 10 sleep 12
 
-# networking 
+# networking
 alias ip='curl -s httpbin.org/ip | awk "/origin/ {gsub(\"\\\"\", \"\"); print \$2}"'
 alias ip_l='ifconfig en0 | awk "\$1==\"inet\" {print \$2}" '
 alias dns_clear_cache='sudo killall -HUP mDNSResponder'
+
+alias pgrep_all="pgrep -f -l"
 
 ## VERY OWN ALIASES
 source ~/.bash_my_aliases
