@@ -1,5 +1,6 @@
 # Intro
-Setup config/dotfiles. See [home]() for contents.
+Setup for config/dotfiles.<br/>
+See [home dir]({{ repo_url_to("home") }}) for main content.
 
 ???- info "[stow](https://www.gnu.org/software/stow/) manages symlinks 🫶 to `git` repo - helps automate _"sync"_ and _"conflict resolution"_."
     [stow (GNU Stow)](https://www.gnu.org/software/stow/)
@@ -160,7 +161,7 @@ echo /opt/local/bin/bash | sudo tee -a /etc/shells
 chsh -s /opt/local/bin/bash
 ```
 
-The main file is [.bash_profile]({{ repo_url_to("home/.bash_profile") }}) which sources:
+Main [.bash_profile]({{ repo_url_to("home/.bash_profile") }}) sources:
 
 - [.bash_path]({{ repo_url_to("home/.bash_path") }})
 - [.bashrc]({{ repo_url_to("home/.bashrc") }})
@@ -169,7 +170,7 @@ The main file is [.bash_profile]({{ repo_url_to("home/.bash_profile") }}) which 
 - [.bash_completion]({{ repo_url_to("home/.bash_completion") }})
 - [.bash_functions.d]({{ repo_url_to("home/.bash_functions.d") }})
 
-Run this to hook [home]({{ repo_url_to("home") }}) dir items in `$HOME` ( all via symlinks 🫶 ) :
+Hook [home]({{ repo_url_to("home") }}) dir items to `$HOME` ( all via symlinks 🫶 ) :
 
 === "simulate"
     ```sh
