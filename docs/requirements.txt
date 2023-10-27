@@ -2,3 +2,4 @@ mkdocs ~= 1.5  # 1.5.3
 mkdocs-material ~= 9.4  # 9.3.2
 mkdocs-git-revision-date-localized-plugin ~= 1.2  # 1.2.1
 pymdown-extensions ~= 10  # 10.3
+mkdocs-macros-plugin ~= 1

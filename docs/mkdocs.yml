@@ -10,6 +10,7 @@ repo_url: https://github.com/lukmdo/dotfiles
 edit_uri: edit/master/docs/pages
 
 plugins:
+  - macros
   - git-revision-date-localized:
       enable_creation_date: true
       type: custom
@@ -19,11 +20,15 @@ plugins:
 theme:
   name: material
   icon:
+    logo: simple/editorconfig
     annotation: material/arrow-right-circle
     repo: fontawesome/brands/github
     edit: material/pencil-circle-outline
     view: material/eye-circle-outline
   language: en
+  palette:
+    scheme: default
+    primary: black
 
   features:
     - content.action.edit
@@ -69,6 +74,7 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+
   - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.snippets

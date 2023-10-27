@@ -160,14 +160,16 @@ echo /opt/local/bin/bash | sudo tee -a /etc/shells
 chsh -s /opt/local/bin/bash
 ```
 
-- [.bash_path]()
-- [.bashrc]()
-- [.bash_aliases]()
-- [.bash_prompt]()
-- [.bash_completion]()
-- [.bash_functions.d]()
+The main file is [.bash_profile]({{ repo_url_to("home/.bash_profile") }}) which sources:
 
-Run this to hook [home]() dir items in `$HOME` ( all via symlinks 🫶 ) :
+- [.bash_path]({{ repo_url_to("home/.bash_path") }})
+- [.bashrc]({{ repo_url_to("home/.bashrc") }})
+- [.bash_aliases]({{ repo_url_to("home/.bash_aliases") }})
+- [.bash_prompt]({{ repo_url_to("home/.bash_prompt") }})
+- [.bash_completion]({{ repo_url_to("home/.bash_completion") }})
+- [.bash_functions.d]({{ repo_url_to("home/.bash_functions.d") }})
+
+Run this to hook [home]({{ repo_url_to("home") }}) dir items in `$HOME` ( all via symlinks 🫶 ) :
 
 === "simulate"
     ```sh
