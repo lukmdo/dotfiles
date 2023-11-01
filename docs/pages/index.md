@@ -62,7 +62,7 @@ See [home dir]({{ repo_url_to("home") }}) for main content.
     echo /opt/local/bin/bash | sudo tee -a /etc/shells
     chsh -s /opt/local/bin/bash
     stow -t ~ --restow home
-    scripts/update_bash_completion.sh
+    ~/env/scripts/update_bash_completion.sh
     ```
 
 ## Key Components
@@ -177,14 +177,32 @@ Hook [home]({{ repo_url_to("home") }}) dir items to `$HOME` ( all via symlinks ð
     # dry run `-n`, verbose `-v`
     stow -n -v -t ~ --restow home
     ```
+=== "conflicts!?"
+    given seeing errors like
+    ```sh
+    WARNING! unstowing home would cause conflicts:
+      * existing target is neither a link nor a directory: FILENAME
+      ...
+    WARNING! stowing home would cause conflicts:
+      * existing target is neither a link nor a directory: FILENAME
+      ...
+    All operations aborted.
+    ```
+    can run this
+    ```sh
+    function diffy(){
+      diff -q ~/$1 ./home/$1 && rm ~/$1 || vimdiff ~/$1 ./home/$1;
+    }
 
+    diffy FILENAME
+    ```
 === "run"
     ```sh
     stow -t ~ --restow home
     ```
 === "verify"
     ```
-    ls -la $HOME
+    ls -la $HOME | grep .bash
 
     lrwxr-xr-x  .bash_aliases -> dotfiles/home/.bash_aliases
     lrwxr-xr-x  .bash_completion -> dotfiles/home/.bash_completion
@@ -194,7 +212,6 @@ Hook [home]({{ repo_url_to("home") }}) dir items to `$HOME` ( all via symlinks ð
     lrwxr-xr-x  .bash_profile -> dotfiles/home/.bash_profile
     lrwxr-xr-x  .bash_prompt -> dotfiles/home/.bash_prompt
     lrwxr-xr-x  .bashrc -> dotfiles/home/.bashrc
-    lrwxr-xr-x  .stow-global-ignore -> dotfiles/home/.stow-global-ignore
     ...
     ```
 
@@ -214,7 +231,7 @@ stow -n -v -t ~ --adopt home  # (1)!
     Update `home/.bash_completion.d/*.sh` shell completion scripts.
     === "run"
         ```shell
-        scripts/update_bash_completion.sh
+        ~/env/scripts/update_bash_completion.sh
         ```
     === "Example output"
         ```shell
