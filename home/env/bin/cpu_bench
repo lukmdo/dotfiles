@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+function __cpu_bench() {
+  # EXAMPLE
+  #   watch -d -n 0 "openssl speed -elapsed -bytes 16 md5 | grep md5"
+
+  local algorithm="md5"
+  local test_args="-elapsed -bytes 16"
+  local verbose=""
+  local skip_run=""
+
+  # process extra args ouside `openssl speed` args
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      -h|--help)
+        cat <<EOF
+Simple tool to check CPU throughput consistency
+
+Usage: cpu_bench [-h] [-x|-X] [openssl-speed-args] [algorithm]
+
+Arguments:
+-h	HELP
+-x	Show command before run
+-X	Show command and exit
+
+openssl-speed-args
+	Default: $test_args
+	See options:
+		openssl speed -help
+algorithm
+	Default: $algorithm
+	See options:
+		openssl list -digest-algorithms
+		openssl list -cipher-algorithms
+
+Examples:
+  # simulate/show command and exit
+  cpu_bench -X
+
+  # use sha1 algorithm
+  cpu_bench sha1
+EOF
+      return
+      ;;
+      -x)
+        verbose=1
+        shift
+        ;;
+      -X)
+        verbose=1
+        skip_run=1
+        shift
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
+  if [ $# -eq 0 ]; then
+    : # no args
+  elif [ $# -eq 1 ]; then
+    # one arg
+    algorithm="$1"
+  else
+    # mutli args: "[$test_args] $algorithm"
+    test_args="${@: 1: $(($#-1))}"
+    algorithm="${@: -1: 1}"
+  fi
+
+  local cmd="watch -d -n 0 \"openssl speed $test_args $algorithm | grep $algorithm\""
+  if [ -n "$verbose" ]; then
+    echo "$cmd"
+  fi
+  if [ -n "$skip_run" ]; then
+    return
+  fi
+
+  eval "$cmd"
+}
+
+__cpu_bench "$@"
