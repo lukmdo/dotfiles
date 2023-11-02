@@ -1,6 +1,5 @@
 site_name: dotfiles
 docs_dir: pages
-
 site_url: https://lukmdo.github.io/dotfiles/
 site_description: TODO-description
 site_author: lukmdo
@@ -19,6 +18,7 @@ plugins:
 
 theme:
   name: material
+  custom_dir: custom
   icon:
     logo: simple/editorconfig
     annotation: material/arrow-right-circle
