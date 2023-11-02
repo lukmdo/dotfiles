@@ -1,0 +1,2 @@
+- `bin` is for executables (and scripts) that are in PATH
+- `scripts` executables are not added to PATH (no bash-completion) but used elsewhere (automation, cron, etc.)
