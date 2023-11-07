@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Intro
 Setup for config/dotfiles.<br/>
 See [home dir]({{ repo_url_to("home") }}) for main content.
