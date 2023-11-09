@@ -119,9 +119,10 @@ alias pname='awk -v ORS=" " "{ print \$0; system(\"ps -o comm= -p\" \$NF) }"'
 # time
 alias date_utc="date -u"
 alias date_sf="TZ=America/Los_Angeles date"
+alias date_ny="TZ=America/New_York date"
 alias date_uk="TZ=Europe/London date"
 alias date_pl="TZ=Europe/Warsaw date"
-alias date_am="TZ=Asia/Yerevan date"
+# alias date_am="TZ=Asia/Yerevan date"
 alias date_stamp="date +%Y%m%dT%H%M%S"
 alias stamp='xargs -L1 echo $(date "+%H:%M:%S")'
 alias rush='time timeout $*' # rush 10 sleep 12
@@ -132,6 +133,9 @@ alias ip_l='ifconfig en0 | awk "\$1==\"inet\" {print \$2}" '
 alias dns_clear_cache='sudo killall -HUP mDNSResponder'
 
 alias pgrep_all="pgrep -f -l"
+
+# `src` tool https://docs.sourcegraph.com/cli
+alias codesearch="src search -insecure-skip-verify --"
 
 ## VERY OWN ALIASES
 source ~/.bash_my_aliases
