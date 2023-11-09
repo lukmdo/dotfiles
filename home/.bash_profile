@@ -5,6 +5,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 #export HOMEBREW_GITHUB_API_TOKEN="GITHUB_API_TOKEN"
 
+source ~/.bash_my_profile
+
 source ~/.bashrc
 source ~/.bash_aliases
 source ~/.bash_prompt
