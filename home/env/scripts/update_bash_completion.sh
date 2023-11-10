@@ -2,12 +2,14 @@
 
 set -euo pipefail
 
-DOTFILES_ROOT_PATH=`echo ~/dotfiles`
-BASH_COMPLETION_D_PATH=`echo ~/.bash_completion.d`
+# Top vars with defaults
+: "${BASH_COMPLETION_D_PATH:="$(echo ~/.bash_completion.d)"}"
+: "${DOTFILES_ROOT_PATH:="$(dirname "$(dirname "$(dirname "$(dirname "$(
+  readlink -f "${BASH_SOURCE[0]}")")")")")"}"
 
 update_bash_completion_d_files() {
   echo -e "Updating:"
-  for F in `ls "${BASH_COMPLETION_D_PATH}"/*_update.sh`; do
+  for F in "${BASH_COMPLETION_D_PATH}"/*_update.sh; do
     echo -en "\n\t$F ... "
     source $F && _update_completion 2>&1 \
       | sed 's/^/\t\t/' \
