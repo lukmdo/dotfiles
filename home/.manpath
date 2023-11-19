@@ -1,0 +1,5 @@
+## Workaround for man-db/`man` colour formatting for `less`.
+# With $MANPAGER `man man` should be colorized.
+# Alternative (with global effect):
+#   export GROFF_NO_SGR=1
+DEFINE 	nroff 	nroff -c -mandoc

@@ -6,6 +6,8 @@
     editor = mate --wait
     autocrlf = input
     #safecrlf = true
+    # -FX (no page if output is short)
+    pager = less -F -X --ignore-case -R --use-color
 [color]
     diff = auto
     status = auto

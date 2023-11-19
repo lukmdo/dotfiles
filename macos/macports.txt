@@ -27,6 +27,7 @@ htop
 ipcalc
 jq
 # links +x11
+man-db
 mtr
 # mutt-devel
 nginx

@@ -9,7 +9,7 @@ export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:$PATH"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$PATH"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
-export GOPATH=$HOME/go
+export GOPATH=$HOME/env/go
 export PATH="$PATH:$GOPATH/bin"
 
 
@@ -19,6 +19,9 @@ export PATH="$HOME/.krew/bin:$PATH"
 export CDPATH=".:$HOME/PycharmProjects/:/usr/local/google_appengine/"
 export MANPATH="/opt/local/share/man:$MANPATH"
 export MANPATH="$HOME/ENV/man/:$HOME/ENV/share/man/:$MANPATH"
+# man-db does not know about Xcode's manpages by default. Optionally add:
+# export MANPATH="$MANPATH:$(find $(xcode-select -p) -type d | grep '/usr/share/man$' | tr '\n' ':')"
+
 #export PERL5LIB="$HOME/ENV/lib/perl5/site_perl/5.8.9/:$PERL5LIB"
 # ack,stow etc.
 PERLMANPATH=$(dirname $(echo /opt/local/share/perl5*/man/man1))

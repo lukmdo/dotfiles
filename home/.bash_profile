@@ -18,6 +18,18 @@ source ~/.bash_completion
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
+# Less/Pager
+# ===
+export LESS="--ignore-case"
+## colourize `man`. See:
+#    man -P "cat" less | grep -A30 "color is either"
+# Example: (+add colours)
+#    -Dd+g : bold -> (+g)green
+#    -Du+y : underline-> (+y)yellow
+# export MANPAGER="less --ignore-case -R --use-color -Dd+G -Du+kw"
+export MANPAGER="less --ignore-case -R --use-color -Dd+g -Du+c"
+
+
 # VirtualEnvWrapper config
 # ===
 # Allow pip to run only with activated virtualenv.
