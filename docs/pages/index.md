@@ -69,6 +69,15 @@ See [home dir]({{ repo_url_to("home") }}) for main content.
     ~/env/scripts/update_bash_completion.sh
     ```
 
+<!--
+```sh
+sudo mkdir -p /var/cache/man  # fix
+sudo mandb --create  # index
+```
+-->
+
+
+
 ## Key Components
 
 <!-- idea: add tree diagram ? -->
