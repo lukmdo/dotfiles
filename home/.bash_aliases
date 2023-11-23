@@ -106,7 +106,6 @@ alias openssl_check_key='openssl rsa -check -in' # FILE AS ARG
 alias openssl_check_cert='openssl x509 -text -noout -in' # FILE AS ARG
 alias openssl_verify_cert='openssl verify -verbose -CAfile' # 2ARGS: ca.pem cert.pem
 
-
 # alias bac='_bac(){ mv $1 $1.bac; }; _bac'
 # alias ubac='_ubac(){ mv $1 $1.bac; }; _bac'
 
@@ -136,6 +135,3 @@ alias pgrep_all="pgrep -f -l"
 
 # `src` tool https://docs.sourcegraph.com/cli
 alias codesearch="src search -insecure-skip-verify --"
-
-## VERY OWN ALIASES
-source ~/.bash_my_aliases
