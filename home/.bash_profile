@@ -12,6 +12,7 @@ source ~/.bash_aliases
 source ~/.bash_prompt
 source <(cat ~/.bash_functions.d/*.sh)  # note: source with *glob wont work
 source ~/.bash_completion
+source ~/.config/terraform
 
 # Colours for grep
 # ===

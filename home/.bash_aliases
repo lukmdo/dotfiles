@@ -97,6 +97,7 @@ alias docker_ps='docker ps -a'
 alias docker_ps_exited='docker ps -a --filter status=exited'
 
 # K8S
+alias k="kubectl"
 alias kubectl_exec='kubectl exec NAME --stdin --tty'
 alias kubectl_context='kubectl config current-context'
 alias minikube_strart='minikube start && eval $(minikube docker-env)'
