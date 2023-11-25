@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+function __cheat_like() {
+  # List matched cheatsheets like KEYWORD
+  #   cht.sh ~KEYWORD
+
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      -h|--help)
+        cat <<EOF
+List matched cheatsheets like KEYWORD
+
+Usage: cheat_like [-h] [-l] KEYWORD
+
+Arguments:
+-h	HELP
+-l	list cheatsheets names only
+
+Example:
+  cheat_like -l benchmark
+EOF
+      return
+      ;;
+      -x)
+        verbose=1
+        shift
+        ;;
+      -X)
+        verbose=1
+        skip_run=1
+        shift
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
+  if [ "$1" == "-l" ]; then
+    # list only
+    cht.sh "/~${2}/i?T" | grep '#\[' | tr -d '#[]' | sort
+  else
+    # list with highlighted matches
+    cht.sh "/~${1}/i" | grep -C 100 -i "${1}"
+  fi
+
+  ## alternative:
+  # `cht.sh` in "local-install/standalone" mode (and cron to update)
+  # https://github.com/chubin/cheat.sh/blob/master/doc/standalone.md
+  ## note: $skip_dirs for speed
+  #local skip_dirs="--ignore-dir=RosettaCodeData  --ignore-dir='match:/pages\..*/'"
+  #ack $skip_dirs -l $1 ~/.cheat.sh/upstream/
+}
+
+__cheat_like "$@"
