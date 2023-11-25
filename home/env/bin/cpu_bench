@@ -26,16 +26,16 @@ Arguments:
 -X	Show command and exit
 
 openssl-speed-args
-	Default: $test_args
-	See options:
-		openssl speed -help
+  Default: $test_args
+  See options:
+    openssl speed -help
 algorithm
-	Default: $algorithm
-	See options:
-		openssl list -digest-algorithms
-		openssl list -cipher-algorithms
+  Default: $algorithm
+  See options:
+    openssl list -digest-algorithms
+    openssl list -cipher-algorithms
 
-Examples:
+Example:
   # simulate/show command and exit
   cpu_bench -X
 
