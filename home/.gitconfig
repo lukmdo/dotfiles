@@ -50,3 +50,5 @@
 	required = true
 [http]
 	cookiefile = /Users/lukmdo/.gitcookies
+[init]
+	defaultBranch = main
