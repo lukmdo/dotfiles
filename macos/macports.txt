@@ -1,3 +1,5 @@
+# Related
+#   port echo requested
 # Uninstall
 #   sudo port -fp uninstall installed
 #
@@ -15,6 +17,7 @@ cheat
 cmake
 curl
 defaultbrowser
+delve
 diffutils
 dos2unix
 # erlang
@@ -28,6 +31,7 @@ ipcalc
 jq
 # links +x11
 man-db
+ministat
 mtr
 # mutt-devel
 nginx
