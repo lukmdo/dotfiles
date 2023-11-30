@@ -37,14 +37,14 @@ sc () {
     for FILE in $*; do
         ft=`echo $FILE |awk -F. '{print $(NF)}'`
         case $ft in
-          *.pl|*.pm ) perl -wc $FILE;;
-          *.py      ) ERRORS=`python -c "import py_compile; py_compile.compile(r'$FILE')"`
-                      if [ -z "$ERRORS" ]; then echo "$FILE syntax OK";else echo $ERROR; fi;;
-          *.sh      ) ERRORS="`bash -n "$FILE"`"
-                      if [ -z "$ERRORS" ]; then echo "$FILE syntax OK";else echo $ERROR; fi;;
-          *.rb      ) ERRORS="`ruby -c "$FILE"`"
-                      if [ -z "$ERRORS" ]; then echo "$FILE syntax OK";else echo $ERROR; fi;;
-          *         ) echo "Unknown file type: $ft of $FILE";;
+            *.pl|*.pm ) perl -wc $FILE;;
+            *.py      ) ERRORS=`python -c "import py_compile; py_compile.compile(r'$FILE')"`
+                if [ -z "$ERRORS" ]; then echo "$FILE syntax OK";else echo $ERROR; fi;;
+            *.sh      ) ERRORS="`bash -n "$FILE"`"
+                if [ -z "$ERRORS" ]; then echo "$FILE syntax OK";else echo $ERROR; fi;;
+            *.rb      ) ERRORS="`ruby -c "$FILE"`"
+                if [ -z "$ERRORS" ]; then echo "$FILE syntax OK";else echo $ERROR; fi;;
+            *         ) echo "Unknown file type: $ft of $FILE";;
         esac
     done
 }
@@ -57,7 +57,7 @@ acat () {
 }
 
 asum () {
-	awk '{sum += $1} END {print sum}'
+    awk '{sum += $1} END {print sum}'
 }
 
 ram () {
@@ -70,42 +70,42 @@ ram () {
 # alias ip='curl -s httpbin.org/ip | awk "/origin/ {gsub(\"\\\"\", \"\"); print \$2}"'
 
 ncol () {
-  COLS=\$$*;            # prepend `$`
-  COLS=${COLS//,/,\$};  # s/,/,$/g
-  COLS=$(echo $COLS | sed 's/-\([0-9]*\)/(NF-\1+1)/g')
-  awk "{print $COLS}"
+    COLS=\$$*;            # prepend `$`
+    COLS=${COLS//,/,\$};  # s/,/,$/g
+    COLS=$(echo $COLS | sed 's/-\([0-9]*\)/(NF-\1+1)/g')
+    awk "{print $COLS}"
 }
 
 ttop () {
-  if [ "$1" = "-v" ] ;then
-    LONG_COMM="command";
-    NSEC=${2:-3};
-  else
-    LONG_COMM="";
-    NSEC=${1:-3};
-  fi;
+    if [ "$1" = "-v" ] ;then
+        LONG_COMM="command";
+        NSEC=${2:-3};
+    else
+        LONG_COMM="";
+        NSEC=${1:-3};
+    fi;
 
-  watch -n $NSEC "
-    top -l1 | head -n1
-    echo;
-    ps ax -o %cpu,%mem,pid,etime,ucomm,${LONG_COMM} -r |head;
-    echo;
-    ps ax -o %mem,%cpu,pid,etime,ucomm,${LONG_COMM} -m |head;
-    echo;
-    printf \"%12s\n\" \"# COMMAND\";
-    ps ax -o ucomm,${LONG_COMM} |sort|uniq -c|sort -rn| head
-    ";
+    watch -n $NSEC "
+        top -l1 | head -n1
+        echo;
+        ps ax -o %cpu,%mem,pid,etime,ucomm,${LONG_COMM} -r |head;
+        echo;
+        ps ax -o %mem,%cpu,pid,etime,ucomm,${LONG_COMM} -m |head;
+        echo;
+        printf \"%12s\n\" \"# COMMAND\";
+        ps ax -o ucomm,${LONG_COMM} |sort|uniq -c|sort -rn| head
+        ";
 }
 
 jira () {
-	if [ -z $1 ]; then
-		# new jira if no param
-		chrome "https://saucedev.atlassian.net/secure/CreateIssue!default.jspa"
-	else
-		chrome "https://saucedev.atlassian.net/browse/${1^^}"
-	fi;
+    if [ -z $1 ]; then
+        # new jira if no param
+        chrome "https://saucedev.atlassian.net/secure/CreateIssue!default.jspa"
+    else
+        chrome "https://saucedev.atlassian.net/browse/${1^^}"
+    fi;
 }
 
 __ () {
-	open "dash://$1$2$3"
+    open "dash://$1$2$3"
 }

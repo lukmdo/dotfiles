@@ -2,47 +2,47 @@
 	name = Lukasz Dobrzanski
 	email = code@lukmdo.com
 [core]
-    excludesfile = ~/.gitignore_global
-    editor = mate --wait
-    autocrlf = input
-    #safecrlf = true
-    # -FX (no page if output is short)
-    pager = less -F -X --ignore-case -R --use-color
+	excludesfile = ~/.gitignore_global
+	editor = mate --wait
+	autocrlf = input
+	#safecrlf = true
+	# -FX (no page if output is short)
+	pager = less -F -X --ignore-case -R --use-color
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
 [pager]
-    color = true
+	color = true
 [alias]
-    b = branch
-    bls = for-each-ref --sort="-committerdate" --format="%(authordate:short)%09%(refname:short)" refs/heads
-    ci = commit
-    co = checkout
-    df = diff
-    lg = log -p
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    ls = ls-files
-    st = status
+	b = branch
+	bls = for-each-ref --sort="-committerdate" --format="%(authordate:short)%09%(refname:short)" refs/heads
+	ci = commit
+	co = checkout
+	df = diff
+	lg = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
+	st = status
 	pushf = push --force-with-lease origin
 #[commit]
-#    gpgsign = true
+#	gpgsign = true
 [push]
-    default = current
+	default = current
 [branch]
-    autosetuprebase = always
+	autosetuprebase = always
 [status]
-    color = auto
+	color = auto
 [diff]
-    renamelimit = 0
+	renamelimit = 0
 [merge]
-    tool = vimdiff
+	tool = vimdiff
 [rerere]
-    enabled = true
-# [hub]
-#     protocol = https
+	enabled = true
+#[hub]
+#	protocol = https
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

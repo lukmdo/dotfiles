@@ -1,4 +1,5 @@
 # bash completion for pack                                 -*- shell-script -*-
+# editorconfig-checker-disable-file
 
 __pack_debug()
 {

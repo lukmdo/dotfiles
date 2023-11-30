@@ -2,7 +2,7 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 export EDITOR="vi"
@@ -28,6 +28,6 @@ export TM_PYCHECKER="pylint"
 
 shopt -s checkwinsize
 if [ "$TERM" != "dumb" ]; then
-	eval "`dircolors -b 2>/dev/null`"
-	alias ls='ls --color=auto'
+    eval "`dircolors -b 2>/dev/null`"
+    alias ls='ls --color=auto'
 fi

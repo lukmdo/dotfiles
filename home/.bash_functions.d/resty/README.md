@@ -8,7 +8,7 @@ Since it is implemented as functions in your shell and not in its own separate
 command environment you have access to all the powerful shell tools, such
 as perl, awk, grep, sed, etc. You can use resty in pipelines to process data
 from REST services, and PUT or POST the data right back.  You can even pipe
-the data in and then edit it interactively in your text editor prior to PUT 
+the data in and then edit it interactively in your text editor prior to PUT
 or POST.
 
 Cookies are supported automatically and stored in a file locally. Most of
@@ -23,7 +23,7 @@ command line pain.
 Quick Start
 ===========
 
-You have `curl`, right? Okay. 
+You have `curl`, right? Okay.
 
       $ curl -L http://github.com/micha/resty/raw/master/resty > resty
 
@@ -43,7 +43,7 @@ Make some HTTP requests.
 
       $ GET /blogs.json
       [ {"id" : 1, "title" : "first post", "body" : "This is the first post"}, ... ]
-      
+
       $ PUT /blogs/2.json '{"id" : 2, "title" : "updated post", "body" : "This is the new."}'
       {"id" : 2, "title" : "updated post", "body" : "This is the new."}
 
@@ -61,8 +61,8 @@ Usage
 
       HEAD [path] [OPTIONS]                   # HEAD request
       OPTIONS [path] [OPTIONS]                # OPTIONS request
-      GET [path] [OPTIONS]                    # GET request 
-      DELETE [path] [OPTIONS]                 # DELETE request 
+      GET [path] [OPTIONS]                    # GET request
+      DELETE [path] [OPTIONS]                 # DELETE request
       PUT [path] [data] [OPTIONS]             # PUT request
       POST [path] [data] [OPTIONS]            # POST request
       TRACE [path] [OPTIONS]                  # TRACE request
@@ -148,7 +148,7 @@ arguments. The URI base will be printed to stdout.
 The Optional Path Parameter
 ===========================
 
-The HTTP verbs (`OPTIONS`, `HEAD`, `GET`, `POST`, `PUT`, and `DELETE`) first 
+The HTTP verbs (`OPTIONS`, `HEAD`, `GET`, `POST`, `PUT`, and `DELETE`) first
 argument is always
 an optional URI path. This path must always start with a `/` character. If
 the path parameter is not provided on the command line, resty will just use
@@ -209,7 +209,7 @@ Or you can pipe the data from another program, like this:
 
       $ myprog | PUT /blogs/5.json
 
-Or, interestingly, as a filter pipeline with 
+Or, interestingly, as a filter pipeline with
 [jsawk](http://github.com/micha/jsawk):
 
       $ GET /blogs/5.json | jsawk 'this.author="Bob Smith";this.tags.push("news")' | PUT
@@ -252,7 +252,7 @@ can use the `-Z` option, and get the raw output.
 Passing Command Line Options To Curl
 ====================================
 
-Anything after the (optional) `path` and `data` arguments is passed on to 
+Anything after the (optional) `path` and `data` arguments is passed on to
 `curl`.
 
 For example:
@@ -272,7 +272,7 @@ Here are some useful options to try:
   * **-v** verbose output, shows HTTP headers and status on stderr
   * **-j** junk session cookies (refresh cookie-based session)
   * **-u \<username:password\>** HTTP basic authentication
-  * **-H \<header\>** add request header (this option can be added more than 
+  * **-H \<header\>** add request header (this option can be added more than
     once)
 
 Setting The Default Curl Options
@@ -324,7 +324,7 @@ _~/.resty/localhost:8080_
       GET -H "Accept: application/json"
       POST -H "Content-Type: text/plain" -u user:pass
 
-Then any GET or POST requests to localhost:8080 will have the specified 
+Then any GET or POST requests to localhost:8080 will have the specified
 options prepended to the curl command line arguments, saving you from having
 to type them out each time, like this:
 
@@ -396,4 +396,3 @@ scripts that make dealing with JSON data easier.
         <test>
           <deep>value</deep>
         </test>
-

@@ -39,11 +39,11 @@ export PIP_REQUIRE_VIRTUALENV=true
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 VIRTUALENVWRAPPER=$(which virtualenvwrapper.sh)
 if [ -n "$VIRTUALENVWRAPPER" ];then
-  if [ ! -d "$HOME/.virtualenvs" ];then mkdir "$HOME/.virtualenvs";fi
-  export WORKON_HOME="$HOME/.virtualenvs"
-  export PIP_VIRTUALENV_BASE="$WORKON_HOME"
-  export PIP_RESPECT_VIRTUALENV=true # use currently activated virtualenv
-  source "$VIRTUALENVWRAPPER"
+    if [ ! -d "$HOME/.virtualenvs" ];then mkdir "$HOME/.virtualenvs";fi
+    export WORKON_HOME="$HOME/.virtualenvs"
+    export PIP_VIRTUALENV_BASE="$WORKON_HOME"
+    export PIP_RESPECT_VIRTUALENV=true # use currently activated virtualenv
+    source "$VIRTUALENVWRAPPER"
 fi
 
 #SMSGATES_BOOTSTRAP=`which smsgates_bootstrap.sh`

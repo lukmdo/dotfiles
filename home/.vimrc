@@ -15,30 +15,30 @@ filetype plugin on
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
-set autoindent 
-set backspace=indent,eol,start 
+set autoindent
+set backspace=indent,eol,start
 set cindent autoindent
-set clipboard+=unnamed   
-set commentstring=\ #\ %s 
-set encoding=utf8 
-set expandtab 
-"set foldlevel=0 
+set clipboard+=unnamed
+set commentstring=\ #\ %s
+set encoding=utf8
+set expandtab
+"set foldlevel=0
 set history=50		" keep 50 lines of command line history
 set hlsearch
-set ignorecase 
+set ignorecase
 set incsearch		" do incremental searching
 set hid " you can change buffer without saving
 set nolz " do not redraw while running macros (much faster)
 set nowrap
 set number
-set paste            
+set paste
 set ruler " Always show current positions along the bottom
 set shiftround      " wcinanie do najblizszego przystanky tab
-set shiftwidth=4 
+set shiftwidth=4
 set showcmd
 set showcmd		    " display incomplete commands
 set tabstop=4
-set textwidth=0 
+set textwidth=0
 set whichwrap+=,h,l  " backspace and cursor keys wrap to
 set wildmenu " turn on wild menu
 
@@ -111,8 +111,6 @@ endif " has("autocmd")
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 endif
 filetype plugin on
-
