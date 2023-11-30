@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # ----------- svn shortcuts ------------
-svndiff () { svn di $* | vim -; }
-st () { svn st $*; }
-stm () { svn st $*|grep -v ^[?X]; } 
+#svndiff () { svn di $* | vim -; }
+#st () { svn st $*; }
+#stm () { svn st $*|grep -v ^[?X]; }
 # -------------------------------------
 
 # ----------- git shortcuts ------------
@@ -18,12 +18,12 @@ md5dir () {
         echo "$1: No such directory"
         return 2
     fi
-  
+
     pushd `pwd` &> /dev/null
     cd $1 &>/dev/null
     dir_path=`pwd`
     popd &> /dev/null
-  
+
     hash md5 &> /dev/null
     if [ $? -eq 0 ]; then
         find -s $dir_path -type f -exec md5 {} \; | awk '{print $NF}' | md5
@@ -32,9 +32,9 @@ md5dir () {
     fi
 }
 
-sc () { 
+sc () {
     # source check
-    for FILE in $*; do 
+    for FILE in $*; do
         ft=`echo $FILE |awk -F. '{print $(NF)}'`
         case $ft in
           *.pl|*.pm ) perl -wc $FILE;;
@@ -50,7 +50,7 @@ sc () {
 }
 
 acat () {
-    # ascii cat 
+    # ascii cat
     # show \r \t \n in file. hexdump -c inspired but simplier output
     # gsed required to replace with newlines
     hexdump -v -e '"%_c"' $* | gsed -e 's/\\n/\\n\n/g';
@@ -66,7 +66,7 @@ ram () {
     sysctl vm.swapusage
 }
 
-# gsub(\""\", \"\"); 
+# gsub(\""\", \"\");
 # alias ip='curl -s httpbin.org/ip | awk "/origin/ {gsub(\"\\\"\", \"\"); print \$2}"'
 
 ncol () {
@@ -80,11 +80,11 @@ ttop () {
   if [ "$1" = "-v" ] ;then
     LONG_COMM="command";
     NSEC=${2:-3};
-  else 
+  else
     LONG_COMM="";
     NSEC=${1:-3};
   fi;
-      
+
   watch -n $NSEC "
     top -l1 | head -n1
     echo;
@@ -99,12 +99,12 @@ ttop () {
 
 jira () {
 	if [ -z $1 ]; then
-		# new jira if no param 
+		# new jira if no param
 		chrome "https://saucedev.atlassian.net/secure/CreateIssue!default.jspa"
-	else		
+	else
 		chrome "https://saucedev.atlassian.net/browse/${1^^}"
 	fi;
-} 
+}
 
 __ () {
 	open "dash://$1$2$3"
