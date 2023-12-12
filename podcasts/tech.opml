@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+<head><title>macOS Podcast exporter</title><dateCreated>12/12/2023, 01:07:39</dateCreated></head>
+<body>
+
+<outline type="rss" text="Does Not Compute" xmlUrl="https://rss.simplecast.com/podcasts/1386/rss" />
+<outline type="rss" text="Think Distributed" xmlUrl="http://feeds.soundcloud.com/users/soundcloud:users:50980903/sounds.rss" />
+<outline type="rss" text="How's Work? with Esther Perel" xmlUrl="https://feeds.megaphone.fm/ep-hw" />
+<!-- <outline type="rss" text="The Changelog: Software Development, Open Source" xmlUrl="http://feeds.5by5.tv/changelog" /> -->
+<outline type="rss" text="Kubernetes Podcast from Google" xmlUrl="https://kubernetespodcast.com/feeds/audio.xml" />
+<outline type="rss" text="PodCTL - Enterprise Kubernetes" xmlUrl="https://feeds.buzzsprout.com/110399.rss" />
+<!-- <outline type="rss" text="CppCast" xmlUrl="http://cppcast.libsyn.com/rss" /> -->
+<outline type="rss" text="Go Time: Golang, Software Engineering" xmlUrl="https://changelog.com/gotime/feed" />
+<!-- <outline type="rss" text="Software Engineering Daily" xmlUrl="https://softwareengineeringdaily.com/feed/podcast/" /> -->
+<!-- <outline type="rss" text="Remote Work Podcast" xmlUrl="https://www.remoteworkpodcast.com/podcast?format=rss" /> -->
+<outline type="rss" text="Supermanagers" xmlUrl="https://anchor.fm/s/1bec0d90/podcast/rss" />
+<outline type="rss" text="Grafana's Big Tent" xmlUrl="https://feeds.transistor.fm/grafanas-big-tent" />
+<outline type="rss" text="The Happiness Algorithm" xmlUrl="https://anchor.fm/s/1101b8bc/podcast/rss" />
+<!-- <outline type="rss" text="bsdtalk" xmlUrl="http://feeds.feedburner.com/Bsdtalk" /> -->
+<outline type="rss" text="Computer System Engineering" xmlUrl="https://itunesu.itunes.apple.com/feed/id341597740" />
+<outline type="rss" text="Google Cloud Platform Podcast" xmlUrl="https://feeds.feedburner.com/GcpPodcast" />
+<!-- <outline type="rss" text="BSD Now Video Feed" xmlUrl="http://feeds.feedburner.com/BsdNowHd" /> -->
+<outline type="rss" text="O'Reilly Programming" xmlUrl="http://feeds.feedburner.com/codepodcast" />
+<outline type="rss" text="Lead From Within" xmlUrl="https://anchor.fm/s/eb01bf6c/podcast/rss" />
+<outline type="rss" text="Big Ideas in App Architecture" xmlUrl="https://www.spreaker.com/show/5780505/episodes/feed" />
+<outline type="rss" text="Building Reddit" xmlUrl="https://anchor.fm/s/d6e2ebb4/podcast/rss" />
+<outline type="rss" text="Google SRE Prodcast" xmlUrl="https://feeds.libsyn.com/407036/rss" />
+<outline type="rss" text="Ardan Labs Podcast" xmlUrl="https://feeds.buzzsprout.com/1466944.rss" />
+
+</body>
+</opml>
