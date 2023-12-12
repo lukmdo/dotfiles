@@ -27,8 +27,13 @@ gcloud components install kubectl
 
 ## go tools
 ```shell
+# dlv/delve via ports
 # https://pkg.go.dev/golang.org/x/pkgsite/cmd/pkgsite
 go install golang.org/x/pkgsite/cmd/pkgsite@master
+go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
+go install golang.org/x/tools/cmd/goimports@latest
+# https://go.dev/blog/govulncheck
+go install golang.org/x/vuln/cmd/govulncheck@latest
 ```
 
 ## env/bin/

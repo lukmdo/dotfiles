@@ -5,13 +5,14 @@ export PATH="$HOME/bin:$HOME/ENV/bin:$PATH"
 
 
 ### SETUP LANG PATHS
-export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:$PATH"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$PATH"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
-export GOPATH=$HOME/env/go
+export GOPATH="$HOME/env/go"
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:/usr/local/go/bin"
 
+#export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
+#export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:$PATH"
+#export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$PATH"
+#export PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH"
 
 ### SETUP TOOLS PATHS
 export PATH="$HOME/.cargo/bin:$PATH"
