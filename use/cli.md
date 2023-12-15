@@ -14,7 +14,7 @@ chmod +x "$BIN_DIR/cht.sh"
 
 ## outside macports
 
-Items not found in [macports](macports.txt) nor in [apps](apps.md)
+Items not found in [macports](../macos/macports.txt) nor in [apps](apps.md)
 
 - [gcloud](https://cloud.google.com/sdk/gcloud#download_and_install_the) and `kubectl`
 ```sh
@@ -34,6 +34,10 @@ go install golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignme
 go install golang.org/x/tools/cmd/goimports@latest
 # https://go.dev/blog/govulncheck
 go install golang.org/x/vuln/cmd/govulncheck@latest
+
+#https://pkg.go.dev/golang.org/x/exp
+go install golang.org/x/exp/cmd/gorelease@latest
+go install golang.org/x/exp/cmd/apidiff@latest
 ```
 
 ## env/bin/
