@@ -1,5 +1,4 @@
 # tealdeer bash completion
-# editorconfig-checker-disable-file
 
 _tealdeer()
 {

@@ -1,1 +1,1 @@
-/opt/local/share/bash-completion/completions/cheat
+/opt/homebrew/etc/bash_completion.d/cheat.bash

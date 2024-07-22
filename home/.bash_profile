@@ -5,19 +5,22 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 #export HOMEBREW_GITHUB_API_TOKEN="GITHUB_API_TOKEN"
 
-source ~/.bash_my_profile
-
 source ~/.bashrc
+source ~/.bash_completion
 source ~/.bash_aliases
 source ~/.bash_prompt
 source <(cat ~/.bash_functions.d/*.sh)  # note: source with *glob wont work
-source ~/.bash_completion
-source ~/.config/terraform
+
+# source ~/.config/terraform
+
+source ~/.bash_my_profile
 
 # Colours for grep
 # ===
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
+
+export JQ_COLORS="0;90:0;37:0;37:0;37:0;32:1;37:1;37:1;36"
 
 # Less/Pager
 # ===
@@ -61,12 +64,16 @@ fi
 #  export GITHUB_PASSWORD="PASS"
 #fi
 
+export HOMEBREW_REPOSITORY=$(brew --repository)
+
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
+# export CLOUDSDK_PYTHON="/opt/homebrew/bin/python3.11"
 
 ## NOTE: gcloud auto added bellow
-export CLOUDSDK_PYTHON=$(which python3)
+# export CLOUDSDK_PYTHON=$(which python3)
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/lukmdo/env/google-cloud-sdk/path.bash.inc' ]; then . '/Users/lukmdo/env/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/Users/lukasz.dobrzanski/env/google-cloud-sdk/path.bash.inc' ]; then . '/Users/lukasz.dobrzanski/env/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/lukmdo/env/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/lukmdo/env/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/Users/lukasz.dobrzanski/env/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/lukasz.dobrzanski/env/google-cloud-sdk/completion.bash.inc'; fi

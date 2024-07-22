@@ -58,13 +58,13 @@ alias gl='git pull'
 alias gp='git push'
 alias gs="gitserve -p 8080 -a localhost"
 alias gst='git status'
-alias gpr='PR=`git pull-request`; echo $PR; echo $PR|pbcopy'
+alias gpr='PR=`git pull-request`; echo $PR | pbcopy'
 alias git-branches-cleanup='git branch --merged | grep -v "\*"| xargs -I {} sh -c "git push origin :{} ; git branch -d {}"'
 alias gg="git grep"
 alias open_mr="lab mr browse"
 
-## RABBITMQ
-alias rabbit_start="sudo -H -u rabbitmq rabbitmq-server"
+# ## RABBITMQ
+# alias rabbit_start="sudo -H -u rabbitmq rabbitmq-server"
 
 ## TCPFLOW
 alias flow_referrers="sudo tcpflow -c -i lo tcp port 8080 | grep Referer:"
@@ -72,12 +72,14 @@ alias flow_from="sudo tcpflow -c -i lo tcp port 8080 | grep From:"
 alias flow_agent="sudo tcpflow -c -i lo tcp port 8080 | grep User-Agent:"
 alias flow_location="sudo tcpflow -c -i lo tcp port 8080 | grep Location:"
 
-## OS X tools for Linux
-if [ ! $(uname -s) = "Darwin" ]; then
-    alias pbcopy='xsel --clipboard --input'
-    alias pbpaste='xsel --clipboard --output'
-fi
+# ## OS X tools for Linux
+# if [ ! $(uname -s) = "Darwin" ]; then
+#     alias pbcopy='xsel --clipboard --input'
+#     alias pbpaste='xsel --clipboard --output'
+# fi
 
+alias pbcopy="tee >(env pbcopy)" # clipboard and stdout
+alias pbcopy-no-out="env pbcopy" # clipboard only
 
 ## OWN ALIASES
 alias chrome="open -a 'Google Chrome'"
@@ -86,6 +88,7 @@ alias ijython="jython $HOME/ENV@/java-readline/jipython/ipython-0.10/ipython.py"
 alias pbwww='pbpaste |python -c "import webbrowser, sys; map(lambda url: webbrowser.open(url.strip()), sys.stdin.readlines())"'
 alias make_ls_targets="awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print \$1}' Makefile | sort"
 alias topcoderArena="javaws http://www.topcoder.com/contest/arena/ContestAppletProd.jnlp"
+alias bytes2='numfmt --to=iec-i --format="%.2f"' # --suffix=B
 
 # DOCKER
 alias dr='docker'
@@ -96,7 +99,11 @@ alias docker_clean='docker rm $(docker ps -a -q)'
 alias docker_ps='docker ps -a'
 alias docker_ps_exited='docker ps -a --filter status=exited'
 
+# docker image ls NAME
+#alias docker_size='docker inspect -f "{{ .Size }}"' # docker_size NAME | bytes2
+
 # K8S
+alias kx="kubectl config get-contexts | egrep 'NAME|\*'"
 alias k="kubectl"
 alias kubectl_exec='kubectl exec NAME --stdin --tty'
 alias kubectl_context='kubectl config current-context'
@@ -116,23 +123,32 @@ alias nmax='count | head'
 alias nmin='count | tail'
 alias pname='awk -v ORS=" " "{ print \$0; system(\"ps -o comm= -p\" \$NF) }"'
 
-# time
+# TIME:
+# ls /usr/share/zoneinfo
 alias date_utc="date -u"
+alias date_br="TZ=Brazil/East date"
 alias date_sf="TZ=America/Los_Angeles date"
 alias date_ny="TZ=America/New_York date"
+alias date_nz="TZ=NZ date"
+alias date_jp="TZ=Japan date"
 alias date_uk="TZ=Europe/London date"
 alias date_pl="TZ=Europe/Warsaw date"
+alias date_pt="TZ=US/Pacific date"
+
 # alias date_am="TZ=Asia/Yerevan date"
 alias date_stamp="date +%Y%m%dT%H%M%S"
 alias stamp='xargs -L1 echo $(date "+%H:%M:%S")'
 alias rush='time timeout $*' # rush 10 sleep 12
 
-# networking
-alias ip='curl -s httpbin.org/ip | awk "/origin/ {gsub(\"\\\"\", \"\"); print \$2}"'
+# NETWORKING
+alias ip='curl -s httpbin.org/ip | awk "/origin/ {gsub(\"\\\"\", \"\"); print \$2}" | pbcopy'
 alias ip_l='ifconfig en0 | awk "\$1==\"inet\" {print \$2}" '
 alias dns_clear_cache='sudo killall -HUP mDNSResponder'
 
 alias pgrep_all="pgrep -f -l"
 
+# OTHER
 # `src` tool https://docs.sourcegraph.com/cli
+# OR in browser https://docs.sourcegraph.com/integration/browser_extension/how-tos/browser_search_engine
 alias codesearch="src search -insecure-skip-verify --"
+alias jwt-decode="jq -R 'split(\".\")[1] | @base64d | fromjson'"

@@ -1,1 +1,1 @@
-/opt/local/share/bash-completion/bash_completion
+/opt/homebrew/etc/profile.d/bash_completion.sh

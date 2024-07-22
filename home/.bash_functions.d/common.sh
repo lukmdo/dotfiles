@@ -100,12 +100,16 @@ ttop () {
 jira () {
     if [ -z $1 ]; then
         # new jira if no param
-        chrome "https://saucedev.atlassian.net/secure/CreateIssue!default.jspa"
+        chrome "$JIRA_HOST/secure/CreateIssue!default.jspa"
     else
-        chrome "https://saucedev.atlassian.net/browse/${1^^}"
+        chrome "$JIRA_HOST/browse/${1^^}"
     fi;
 }
 
 __ () {
     open "dash://$1$2$3"
+}
+
+so () {
+    chrome "https://stackoverflow.com/questions/$1"
 }

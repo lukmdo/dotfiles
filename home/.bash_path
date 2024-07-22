@@ -1,11 +1,14 @@
 ### SETUP SYS PATHS
 export PATH="/usr/local/bin:$PATH"
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"    # ??
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"  # homebrew
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"        # ports
 export PATH="$HOME/bin:$HOME/ENV/bin:$PATH"
 
 
 ### SETUP LANG PATHS
 export GOPATH="$HOME/env/go"
+export GIT_LFS_SKIP_SMUDGE="true"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/usr/local/go/bin"
 
@@ -18,8 +21,13 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.krew/bin:$PATH"
 export CDPATH=".:$HOME/PycharmProjects/:/usr/local/google_appengine/"
-export MANPATH="/opt/local/share/man:$MANPATH"
-export MANPATH="$HOME/ENV/man/:$HOME/ENV/share/man/:$MANPATH"
+export MANPATH="/opt/homebrew/share/man:$MANPATH"               # homebrew
+export MANPATH="/opt/local/share/man:$MANPATH"                  # ports
+export MANPATH="$HOME/ENV/man/:$HOME/ENV/share/man/:$MANPATH"   # custom
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"       # alias make=gmake
+
+##export PATH="/opt/homebrew/opt/uutils-coreutils/libexec/uubin:$PATH" # brew info uutils-coreutils
+
 # man-db does not know about Xcode's manpages by default. Optionally add:
 # export MANPATH="$MANPATH:$(find $(xcode-select -p) -type d | grep '/usr/share/man$' | tr '\n' ':')"
 
