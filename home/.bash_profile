@@ -70,7 +70,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_
 # export CLOUDSDK_PYTHON="/opt/homebrew/bin/python3.11"
 
 ## NOTE: gcloud auto added bellow
-# export CLOUDSDK_PYTHON=$(which python3)
+export CLOUDSDK_PYTHON=$(which python3)
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/lukasz.dobrzanski/env/google-cloud-sdk/path.bash.inc' ]; then . '/Users/lukasz.dobrzanski/env/google-cloud-sdk/path.bash.inc'; fi
