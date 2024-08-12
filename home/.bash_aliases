@@ -44,7 +44,7 @@ alias mysql_stop="sudo /etc/init.d/mysql stop"
 alias postgresql_restart="sudo /etc/init.d/postgresql-8.3 restart"
 
 ## GIT ALIASES
-#alias git='hub'
+___git_complete g __git_main  # ALIAS/BASH-COMPLETION REMAP
 alias g='git'
 alias gb='git branch'
 alias gba='git branch -a'
@@ -103,8 +103,9 @@ alias docker_ps_exited='docker ps -a --filter status=exited'
 #alias docker_size='docker inspect -f "{{ .Size }}"' # docker_size NAME | bytes2
 
 # K8S
-alias kx="kubectl config get-contexts | egrep 'NAME|\*'"
+complete -o default -F __start_kubectl k # ALIAS/BASH-COMPLETION REMAP
 alias k="kubectl"
+alias kx="kubectl config get-contexts | egrep 'NAME|\*'"
 alias kubectl_exec='kubectl exec NAME --stdin --tty'
 alias kubectl_context='kubectl config current-context'
 alias minikube_strart='minikube start && eval $(minikube docker-env)'
@@ -152,3 +153,6 @@ alias pgrep_all="pgrep -f -l"
 # OR in browser https://docs.sourcegraph.com/integration/browser_extension/how-tos/browser_search_engine
 alias codesearch="src search -insecure-skip-verify --"
 alias jwt-decode="jq -R 'split(\".\")[1] | @base64d | fromjson'"
+
+# GH
+alias gh_action_workflow_ref="chrome 'https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions'"
