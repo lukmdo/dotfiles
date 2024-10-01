@@ -113,3 +113,8 @@ __ () {
 so () {
     chrome "https://stackoverflow.com/questions/$1"
 }
+
+gcp_webconsole() {
+    chrome "https://console.cloud.google.com/kubernetes/clusters/details/${GCP_REGION}/${GCP_CLUSTER}/details?project=${GCP_PROJ}"
+}
+

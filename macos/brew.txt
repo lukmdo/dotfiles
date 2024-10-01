@@ -7,6 +7,7 @@ act
 argocd
 bash
 bash-completion@2
+bash-preexec
 buf
 cheat
 curl
@@ -33,6 +34,7 @@ logcli
 mage
 make
 md5sha1sum
+mtr
 node
 pre-commit
 python@3.11

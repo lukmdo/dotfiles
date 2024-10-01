@@ -66,6 +66,11 @@ fi
 
 export HOMEBREW_REPOSITORY=$(brew --repository)
 
+# bash-preexec (from brew; see macos/brew.txt and ~/.bash_functions.d/bash-preexec.sh)
+. /opt/homebrew/etc/profile.d/bash-preexec.sh
+. ~/.bash_functions.d/bash-preexec.sh
+preexec_functions+=(preexec_hook_cmd)
+
 export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
 # export CLOUDSDK_PYTHON="/opt/homebrew/bin/python3.11"
 
