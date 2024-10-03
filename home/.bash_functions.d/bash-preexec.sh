@@ -17,6 +17,8 @@ preexec_hook_cmd() {
 
 preexec_kubectl_config_use_context() {
     local ctx_name=$(echo "$1" | tr -d " ")
+    # reset all vars first
+    . <(grep "export " ~/.kube/ctx.env  | awk -F'=' '{print $1"="}' | sort | uniq)
 
     if grep -q "$ctx_name" ~/.kube/ctx.env; then
         source <(grep "$ctx_name" ~/.kube/ctx.env)
