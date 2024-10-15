@@ -80,6 +80,8 @@ alias flow_location="sudo tcpflow -c -i lo tcp port 8080 | grep Location:"
 
 alias pbcopy="tee >(env pbcopy)" # clipboard and stdout
 alias pbcopy-no-out="env pbcopy" # clipboard only
+alias pbpaste_json="pbpaste | jq"
+alias pbpaste_base64="pbpaste | base64 -D"
 
 ## OWN ALIASES
 alias chrome="open -a 'Google Chrome'"
