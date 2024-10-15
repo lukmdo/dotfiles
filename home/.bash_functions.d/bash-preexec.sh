@@ -10,8 +10,11 @@
 # hook up preexec_ functions by prefix/pattern
 preexec_hook_cmd() {
     case $1 in
-        @(k|kubectl)" config use-context "* ) preexec_kubectl_config_use_context "${1#@(k|kubectl) config use-context}";;
-        *                                   ) ;;
+        kx)
+            preexec_kubectl_config_use_context "$(kubectl config current-context)";;
+        @(k|kubectl)" config use-context "* )
+            preexec_kubectl_config_use_context "${1#@(k|kubectl) config use-context}";;
+        * ) ;;
     esac
 }
 

@@ -107,7 +107,7 @@ alias docker_ps_exited='docker ps -a --filter status=exited'
 # K8S
 complete -o default -F __start_kubectl k # ALIAS/BASH-COMPLETION REMAP
 alias k="kubectl"
-alias kx="kubectl config get-contexts | egrep 'NAME|\*'"
+alias kx="kubectl config get-contexts | egrep \"NAME|\*\""
 alias kubectl_exec='kubectl exec NAME --stdin --tty'
 alias kubectl_context='kubectl config current-context'
 alias minikube_strart='minikube start && eval $(minikube docker-env)'
