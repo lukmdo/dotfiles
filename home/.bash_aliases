@@ -152,7 +152,7 @@ alias pgrep_all="pgrep -f -l"
 # `src` tool https://docs.sourcegraph.com/cli
 # OR in browser https://docs.sourcegraph.com/integration/browser_extension/how-tos/browser_search_engine
 alias codesearch="src search -insecure-skip-verify --"
-alias jwt-decode="jq -R 'split(\".\")[1] | @base64d | fromjson'"
+alias jwt-decode="jq -R 'split(\".\")[0,1] | @base64d | fromjson'"
 
 # GH
 alias gh_action_workflow_ref="chrome 'https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions'"
