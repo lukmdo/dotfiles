@@ -2,6 +2,7 @@
 # brew list --installed-on-request >> brew.txt
 #
 # brew install $(grep '^\w' brew.txt | tr '\n' ' ')
+#kubectl-argo-rollouts
 ack
 act
 argocd
@@ -11,6 +12,8 @@ bash-preexec
 buf
 cheat
 curl
+defaultbrowser
+docker
 dos2unix
 gh
 git
@@ -28,7 +31,6 @@ jq
 k6
 k9s
 krew
-kubectl-argo-rollouts
 kubernetes-cli
 logcli
 mage
