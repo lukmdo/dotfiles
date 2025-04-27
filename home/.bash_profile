@@ -79,7 +79,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_
 export CLOUDSDK_PYTHON=$(which python3)
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/lukasz.dobrzanski/env/google-cloud-sdk/path.bash.inc' ]; then . '/Users/lukasz.dobrzanski/env/google-cloud-sdk/path.bash.inc'; fi
+if [ -f "$HOME/env/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/env/google-cloud-sdk/path.bash.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/lukasz.dobrzanski/env/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/lukasz.dobrzanski/env/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f "$HOME/env/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/env/google-cloud-sdk/completion.bash.inc"; fi
