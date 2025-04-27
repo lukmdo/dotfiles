@@ -58,6 +58,7 @@ alias gl='git pull'
 alias gp='git push'
 alias gs="gitserve -p 8080 -a localhost"
 alias gst='git status'
+alias gstt='git status --untracked-files=false'
 alias gpr='PR=`git pull-request`; echo $PR | pbcopy'
 alias git-branches-cleanup='git branch --merged | grep -v "\*"| xargs -I {} sh -c "git push origin :{} ; git branch -d {}"'
 alias gg="git grep"
@@ -158,6 +159,8 @@ alias pgrep_all="pgrep -f -l"
 # OR in browser https://docs.sourcegraph.com/integration/browser_extension/how-tos/browser_search_engine
 alias codesearch="src search -insecure-skip-verify --"
 alias jwt-decode="jq -R 'split(\".\")[0,1] | @base64d | fromjson'"
+alias jq_stern="awk -u '{ \$1=\$2=\"\";print \$0; system(\"\") }'  | jq"
+alias rbac-tool='kubectl-rbac_tool' # via kubectl krew install rbac-tool
 
 # GH
 alias gh_action_workflow_ref="chrome 'https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions'"
