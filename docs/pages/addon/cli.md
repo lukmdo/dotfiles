@@ -1,17 +1,17 @@
 # CLI's
 
-## from brew/macports
+## From brew/macports
 
-- [cheat](https://github.com/cheat/cheat) (also used by [cht.sh]())
-  - bonus: allows custom dirs `cheat -d` for `work` and `personal` use
-- [tldr](https://dbrgn.github.io/tealdeer/) (also used by [cht.sh]())
+- [cheat](https://github.com/cheat/cheat) - used by [cht.sh]()<br>
+  bonus: allows custom dirs `cheat -d` for `work` and `personal` use
+- [tldr](https://dbrgn.github.io/tealdeer/) - used by [cht.sh]()
 
-## outside brew/macports
-I
-Not in:
-- [macports.txt](../macos/macports.txt)
-- [brew.txt](../macos/brew.txt)
-- [apps](apps.md)
+## Outside brew/macports
+
+!!! info "not in"
+    - [macos/macports.txt]({{ repo_url_to("macos/macports.txt") }})
+    - [macos/brew.txt]({{ repo_url_to("macos/brew.txt") }})
+    - [apps](apps.md)
 
 - [`gcloud`](https://cloud.google.com/sdk/docs/install) and `kubectl`
 ```sh
@@ -31,7 +31,7 @@ curl https://cht.sh/:cht.sh > "$BIN_DIR/cht.sh"
 chmod +x "$BIN_DIR/cht.sh"
 ```
 
-## go tools
+### go tools
 ```shell
 # dlv/delve via ports
 # https://pkg.go.dev/golang.org/x/pkgsite/cmd/pkgsite
@@ -46,9 +46,8 @@ go install golang.org/x/exp/cmd/gorelease@latest
 go install golang.org/x/exp/cmd/apidiff@latest
 ```
 
-## env/bin/
+### env/bin
 drop-in binaries
 
 - [pack](https://github.com/buildpacks/pack/releases)
 - [gh](https://cli.github.com/)
-

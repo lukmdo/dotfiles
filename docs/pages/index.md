@@ -3,7 +3,7 @@ comments: true
 ---
 
 # Intro
-Setup for config/dotfiles.<br/>
+Setup for [config/dotfiles](https://dotfiles.github.io).<br/>
 See [home dir]({{ repo_url_to("home") }}) for main content.
 
 ???- info "[stow](https://www.gnu.org/software/stow/) manages symlinks 🫶 to `git` repo - helps automate _"sync"_ and _"conflict resolution"_."
@@ -45,11 +45,15 @@ See [home dir]({{ repo_url_to("home") }}) for main content.
     git clone git@github.com:lukmdo/dotfiles.git
     cd dotfiles
 
-    ## MacPorts
     xcode-select --install
     # install Xcode from AppStore, then
     sudo xcodebuild -license accept
     sudo xcodebuild -runFirstLaunch
+
+    ## Brew
+    brew install $(grep '^\w' macos/brew.txt | tr '\n' ' ')
+
+    ## MacPorts
     sudo port selfupdate
     sudo port -N install $(\
       cat macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
@@ -77,7 +81,6 @@ sudo mandb --create  # index
 -->
 
 
-
 ## Key Components
 
 <!-- idea: add tree diagram ? -->
@@ -86,19 +89,17 @@ sudo mandb --create  # index
 
     Note: "add-on" components can be skipped.
 
-    1. [macports](#macports)
-    2. add-on: [macOS X](#todo-macos-x) (via [defaults]())
-    3. add-on: [standalone tools](#todo-standalone-tools)
-        - [CLI's]()
-        - [Apps]()
-        - IDE
-    4. [terminal](#todo-terminal)
+    1. [brew/macports](#brewmacports)
+    2. add-on: [macOS](#add-on-macos-tools)
+    3. add-on: [standalone tools](#add-on-standalone-tools)
+        - [CLI's](addon/cli)
+        - [Apps](addon/apps)
     5. [bash glue](#bash-glue)
 
-### MacPorts
+### Brew/MacPorts
 
 Install required dependencies.
-```
+```shell
 xcode-select --install
 
 # install Xcode from AppStore, then
@@ -106,36 +107,47 @@ sudo xcodebuild -license accept
 sudo xcodebuild -runFirstLaunch
 ```
 
-Install [macports](https://www.macports.org/install.php) utility (adds `port` command).
+=== "brew"
 
-Finally, will install selected ports:
+    Install [brew latest pkg installer](https://github.com/Homebrew/brew/releases)
 
-- [macos/macports.txt]()
-- alternative: minimalistic [macos/macports.min.txt]()
-
-=== "simulate"
-    ```sh
-    # see full command
-    echo port -N install $(\
-      cat ~/dotfiles/macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
-
-    # dry run `-y`
-    port -y -N install $(\
-      cat ~/dotfiles/macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
-    ```
-
-=== "run"
-    ```sh
-    sudo port selfupdate
-    sudo port -N install $(\
-      cat ~/dotfiles/macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
-    ```
-
-=== "verify"
+    Install packages from [macos/brew.txt]({{ repo_url_to("macos/brew.txt") }})
     ```shell
-    port echo requested
-    port echo requested and installed
+    brew install $(grep '^\w' macos/brew.txt | tr '\n' ' ')
     ```
+
+=== "macports"
+
+    Install [macports](https://www.macports.org/install.php) utility (adds `port` command).
+
+    Finally, will install selected ports:
+
+    - [macos/macports.txt]({{ repo_url_to("macos/macports.txt") }})
+      - alternative: minimalistic [macos/macports.min.txt]({{ repo_url_to("macos/macports.min.txt") }})
+
+    === "simulate"
+        ```sh
+        # see full command
+        echo port -N install $(\
+          cat ~/dotfiles/macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
+
+        # dry run `-y`
+        port -y -N install $(\
+          cat ~/dotfiles/macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
+        ```
+
+    === "run"
+        ```sh
+        sudo port selfupdate
+        sudo port -N install $(\
+          cat ~/dotfiles/macos/macports.txt | egrep '^\w' | tr '\n' ' ' )
+        ```
+
+    === "verify"
+        ```shell
+        port echo requested
+        port echo requested and installed
+        ```
 <!---
 ```
 # specific to python virtualenvwrapper and requires stow to run
@@ -145,19 +157,14 @@ ls -l $WORKON_HOME
 ```
 -->
 
-### TODO: macOS X
+### add-on: MacOS tools
+
 ```shell
 macos/set_defaults.sh
 ```
-repo_url_to("macos/set_defaults.sh")
+[source]({{ repo_url_to("macos/set_defaults.sh") }})
 
-Then:
-
-* app shortcuts
-* crontab (load) from .config/.crontab
-
-### TODO: standalone tools
-### Terminal
+Setup Terminal
 
 Load custom settings and set as default.
 ```shell
@@ -165,6 +172,19 @@ open dotfiles/macos/CustomTerminalSettings.terminal
 defaults write com.apple.terminal "Default Window Settings" -string "CustomTerminalSettings"
 defaults write com.apple.Terminal "Startup Window Settings" -string "CustomTerminalSettings"
 ```
+
+Then:
+
+- app shortcuts
+- crontab (load) from .config/.crontab
+
+### add-on: standalone tools
+
+- [CLIs](addon/cli)
+- [Apps](addon/apps)
+- IDE
+
+jetbrains [keymap]({{ repo_url_to("jetbrains.kaymap.lukmdo.macOS.xml") }})
 
 ### Bash Glue
 
