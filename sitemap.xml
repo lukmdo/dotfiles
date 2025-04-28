@@ -2,12 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://lukmdo.github.io/dotfiles/</loc>
-         <lastmod>2023-11-10</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-04-28</lastmod>
     </url>
     <url>
-         <loc>https://lukmdo.github.io/dotfiles/todo/</loc>
-         <lastmod>2023-11-10</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://lukmdo.github.io/dotfiles/addon/apps/</loc>
+         <lastmod>2025-04-28</lastmod>
+    </url>
+    <url>
+         <loc>https://lukmdo.github.io/dotfiles/addon/cli/</loc>
+         <lastmod>2025-04-28</lastmod>
     </url>
 </urlset>

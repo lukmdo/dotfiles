@@ -12,22 +12,26 @@
         <meta name="author" content="lukmdo">
       
       
+        <link rel="canonical" href="https://lukmdo.github.io/dotfiles/addon/cli/">
+      
+      
+        <link rel="prev" href="../apps/">
       
       
       
-      <link rel="icon" href="/dotfiles/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>dotfiles</title>
+        <title>CLI's - dotfiles</title>
       
     
     
-      <link rel="stylesheet" href="/dotfiles/assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
-        <link rel="stylesheet" href="/dotfiles/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +56,9 @@
       
     
     
-      <link rel="stylesheet" href="/dotfiles/assets/extra.css">
+      <link rel="stylesheet" href="../../assets/extra.css">
     
-    <script>__md_scope=new URL("/dotfiles/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#clis" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -89,7 +98,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/dotfiles/." title="dotfiles" class="md-header__button md-logo" aria-label="dotfiles" data-md-component="logo">
+    <a href="../.." title="dotfiles" class="md-header__button md-logo" aria-label="dotfiles" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.325.402c-.242-.013-1.006.34-1.402.544-.897.472-1.14.632-1.806 1.54-.766 1.046-1.084 1.638-1.213 2.181-.383 1.392-.533 2.089-1.148 2.934-.457.344-.546.792-.911 1.305-.234.327-.862 1.43-.863 1.517-.003.163-.05.2-.539.184-.526-.018-.736.039-1.003.299-.24.232-.288.24-.289 1.054 0 .98.229 1.09.574 1.545C1.207 14.798.098 18.578 0 20.885c0 .195.015.706.131 1.741.137.296.337.514.587.671.822.062 1.762.302 3.39.302 1.315 0 3.857-.58 4.06-.635.693-.185 1.771-.76 2.51-1.187.174-.1 1.395-.542 1.856-.89.239-.181 1.461-.872 1.887-1.206.876-.687.96-.835 1.717-1.942.345-.505.497-.644.829-1.455l.01-.703c.262.09 2.184.608 2.41.743.367.219.012.448-.183.677-.14.165.092.323.224.203.192-.174.781-.564.744-.76 0-.134-.315-.328-.807-.572-.446-.221-.416-.218-.256-.265.905-.301 1.406-.437 2.032-.8 1.677-1.042 2.555-1.976 2.761-2.927.198-.876.09-1.52-.273-2.294-.183-.683-.513-.935-1.24-1.237-.848-.353-2.396-.51-3.012-.3-.517.175-1.777.738-2.416 1.057-.346.173-.633.307-.638.297-.156-.254-.32-.506-.463-.79-.252-.5-.37-.659-.624-.777-.133-.062-.385-.175-.684-.385-.496-.344-1.162-.82-2.723-1.243.892-1.545.904-1.74 1.039-2.587.125-.629.168-1.685.039-1.97-.117-.257-.617-.8-.955-.962-.66-.315-1.075-.287-1.627-.287m.023.564c.172-.001.369.022.622.07.44.085.728.2 1.171.47l.3.182.065.525c.069.564.046.986-.073 1.348-.04.124-.134.424-.207.667-.145.484-.498 1.015-.636 1.236-.03.05-.125-.022-.166.08-.184.466-.4.487-.76.52-.113.01-.889-.046-1.687-.07-.963.028-1.337-.22-2.518.258-.253.096.528-1.41.61-1.56.21-.38 1.327-1.66 1.6-1.762.23-.086.456-.341.656-.532.33-.315.418-.348.765-.415.324-.063 1.066-.29 1.43-.037.225.178.381.537.346.821-.069.566-.149.792-.497 1.31-.824 1.227-.806 1.251-.699 1.313.105.06.085.094.067.161-.056.206.007.163.161.11.315-.11.802-.996 1.119-2.001.192-.611.19-.335.16-1.12-.017-.465-.029-.415-.182-.665-.227-.37-.45-.49-1.22-.49-.83-.002-1.143.033-1.676.515-.603.544-1.083.77-1.949 2.054-.427.461-.92 1.615-1.149 2.427-.029-.005-.043.02-.015-.366.043-.588.185-.988.79-2.225.429-.874.58-1.133.76-1.3.613-.57 1.66-1.217 2.34-1.445.153-.052.3-.078.472-.08zm1.285 6.017c1.406.541 2.34.62 3.442 1.654.68 1.108.9 2.22 1.246 3.435.343 1.06.33 2.738.321 2.97-.414-.157-.826-.197-1.292-.214-.06-.542-1.137-.636-1.531-.825-.512-.228-1.295-.364-2.3-.527-.96-.22-1.753-.111-2.722-.125-.11.1-.19.186-.278.317-.15-.08-.354-.275-.634-.264-.105 0-.117-.018-.08-.28.024-.168.102-.305.017-.383-.221-.204-.167-.218-.201-.316-1.107-.64-3.029-1.611-4.02-1.71.34-.476.195-.52.303-.691.272-.429.968-1.343 1.123-1.694 0-.229.723-.984 1.403-1.503 1.43-.28 3.565-.265 5.203.156m8.519 1.505c1.605.041 2.166.236 2.697.777.524.55.698.877.698 1.31 0 .354-.278 1.343-.462 1.647-.7 1.152-2.265 2.404-3.6 2.88-.316.111-.478.133-1.096.148-.403.035-.91-.043-1.297-.13.22-2.561.026-2.73-.198-3.771.09-.22.505-.48.422-.611.776-.49 1.325-1.04 1.933-1.228.408-.15.493-.161 1.343-.186.802-.023.944-.014 1.224.075.597.19 1.265.746 1.265 1.053 0 .193.044.242.137.241.22-.002.151-.326.037-.559-.378-.704-.968-.954-1.533-1.081-.143-.03-.6-.099-1.013-.118-.591-.027-.84-.005-1.143.06-.48.102-.898.239-1.302.596-.31.275-.857.591-1.305.805-.106.015-.174-.17-.256-.267 1.053-.807 2.03-1.521 3.449-1.64zM2.718 10.96c-.304.488-.515.842-.524 1.226-.12.301-.227.595-.38.907-.373-.376-.254-1.176-.093-1.517.357-.69.368-.508.997-.616m.798.111c1.097.336 2.247.64 3.698 1.535.278.167.13.5.024 1.034a1.68 1.68 0 0 1-1.133.607c.431-.434.878-1.195.402-1.714-.118-.156-.15-.181-.358-.166-.284.02-.288-.006-.44.389-.327.385-.492 1.292-.382 1.576-.566-.033-2.077-.152-2.95-.709.094-.243.335-.595.358-.914.119-.241.62-1.665.78-1.638zm2.7 1.709c.167.282-.192 1.135-.417 1.241-.165-.602.167-1.17.416-1.241zm3.534.831c.437 0 1.24.092 2.21.253.836.138.995.177 1.715.414.854.264.798.364 1.087.785.063.09.156.366.205.609.109.533-.402.943-1.44 1.157-.354.073-.673.097-1.23.093-.879-.007-1.19-.044-1.685-.2-.736-.231-1.114-.555-1.519-1.233-.22-.37-.273-.414-.242-.685.064-.562.183-.927.346-1.064.134-.113.203-.129.553-.129m-1.984.085c.1-.003.586.224.683.29-.142.385-.009 1.322.383 1.777.092.143.318.465.535.68.684.683 1.13.795 2.656.796 1.278.002 1.65-.068 2.285-.272.589-.188.768-.428.837-.595.17-.402.252-.817.211-1.247l1.287.366c-.106.866-.587 1.375-.944 1.821-.266.428-.816 1.23-.971 1.364-.747.643-1.436 1.095-2.928 1.936-.439.248-1.618.706-1.924.859-.312.156-1.417.81-1.569.855a9.5 9.5 0 0 1-1.554.315c-.4.047-1.82.262-2.725.299-.66.014-.84-.054-1.657-.03-.438-.084-1.396-.301-1.396-.301-.285-.457-.359-.807-.439-1.336.664.778 1.063 1.041 1.595 1.041.479 0 .725-.18.92-.18.123 0 .454-.233.437-.385a1.03 1.03 0 0 0-.253-.605c-.23-.147-1.6-.691-1.832-.691-.64 0-.781.05-.85.18.395-2.142.909-4.616 1.67-6.62 1.174.514 3.097.887 4.043.568 1.452-.51 1.12-.685 1.5-.885m3.817.15c-.168 0-.586.458-.744.815-.159.359-.202.911-.083 1.055.098.118.503.12.707-.004.398-.243.779-1.096.682-1.538-.035-.16-.33-.328-.562-.328m.026.39c.148.178-.04.659-.213.85-.204.216-.406.247-.348.058.14-.353.456-.914.561-.908M2.68 21.462c.156.049.353.27.315.33-.638.036-.998-.008-1.051-.012-.217-.017-.917-.32-.897-.657.027-.395 1.32.31 1.633.339"/></svg>
@@ -109,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              CLI's
             
           </span>
         </div>
@@ -159,7 +168,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/dotfiles/." title="dotfiles" class="md-nav__button md-logo" aria-label="dotfiles" data-md-component="logo">
+    <a href="../.." title="dotfiles" class="md-nav__button md-logo" aria-label="dotfiles" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.325.402c-.242-.013-1.006.34-1.402.544-.897.472-1.14.632-1.806 1.54-.766 1.046-1.084 1.638-1.213 2.181-.383 1.392-.533 2.089-1.148 2.934-.457.344-.546.792-.911 1.305-.234.327-.862 1.43-.863 1.517-.003.163-.05.2-.539.184-.526-.018-.736.039-1.003.299-.24.232-.288.24-.289 1.054 0 .98.229 1.09.574 1.545C1.207 14.798.098 18.578 0 20.885c0 .195.015.706.131 1.741.137.296.337.514.587.671.822.062 1.762.302 3.39.302 1.315 0 3.857-.58 4.06-.635.693-.185 1.771-.76 2.51-1.187.174-.1 1.395-.542 1.856-.89.239-.181 1.461-.872 1.887-1.206.876-.687.96-.835 1.717-1.942.345-.505.497-.644.829-1.455l.01-.703c.262.09 2.184.608 2.41.743.367.219.012.448-.183.677-.14.165.092.323.224.203.192-.174.781-.564.744-.76 0-.134-.315-.328-.807-.572-.446-.221-.416-.218-.256-.265.905-.301 1.406-.437 2.032-.8 1.677-1.042 2.555-1.976 2.761-2.927.198-.876.09-1.52-.273-2.294-.183-.683-.513-.935-1.24-1.237-.848-.353-2.396-.51-3.012-.3-.517.175-1.777.738-2.416 1.057-.346.173-.633.307-.638.297-.156-.254-.32-.506-.463-.79-.252-.5-.37-.659-.624-.777-.133-.062-.385-.175-.684-.385-.496-.344-1.162-.82-2.723-1.243.892-1.545.904-1.74 1.039-2.587.125-.629.168-1.685.039-1.97-.117-.257-.617-.8-.955-.962-.66-.315-1.075-.287-1.627-.287m.023.564c.172-.001.369.022.622.07.44.085.728.2 1.171.47l.3.182.065.525c.069.564.046.986-.073 1.348-.04.124-.134.424-.207.667-.145.484-.498 1.015-.636 1.236-.03.05-.125-.022-.166.08-.184.466-.4.487-.76.52-.113.01-.889-.046-1.687-.07-.963.028-1.337-.22-2.518.258-.253.096.528-1.41.61-1.56.21-.38 1.327-1.66 1.6-1.762.23-.086.456-.341.656-.532.33-.315.418-.348.765-.415.324-.063 1.066-.29 1.43-.037.225.178.381.537.346.821-.069.566-.149.792-.497 1.31-.824 1.227-.806 1.251-.699 1.313.105.06.085.094.067.161-.056.206.007.163.161.11.315-.11.802-.996 1.119-2.001.192-.611.19-.335.16-1.12-.017-.465-.029-.415-.182-.665-.227-.37-.45-.49-1.22-.49-.83-.002-1.143.033-1.676.515-.603.544-1.083.77-1.949 2.054-.427.461-.92 1.615-1.149 2.427-.029-.005-.043.02-.015-.366.043-.588.185-.988.79-2.225.429-.874.58-1.133.76-1.3.613-.57 1.66-1.217 2.34-1.445.153-.052.3-.078.472-.08zm1.285 6.017c1.406.541 2.34.62 3.442 1.654.68 1.108.9 2.22 1.246 3.435.343 1.06.33 2.738.321 2.97-.414-.157-.826-.197-1.292-.214-.06-.542-1.137-.636-1.531-.825-.512-.228-1.295-.364-2.3-.527-.96-.22-1.753-.111-2.722-.125-.11.1-.19.186-.278.317-.15-.08-.354-.275-.634-.264-.105 0-.117-.018-.08-.28.024-.168.102-.305.017-.383-.221-.204-.167-.218-.201-.316-1.107-.64-3.029-1.611-4.02-1.71.34-.476.195-.52.303-.691.272-.429.968-1.343 1.123-1.694 0-.229.723-.984 1.403-1.503 1.43-.28 3.565-.265 5.203.156m8.519 1.505c1.605.041 2.166.236 2.697.777.524.55.698.877.698 1.31 0 .354-.278 1.343-.462 1.647-.7 1.152-2.265 2.404-3.6 2.88-.316.111-.478.133-1.096.148-.403.035-.91-.043-1.297-.13.22-2.561.026-2.73-.198-3.771.09-.22.505-.48.422-.611.776-.49 1.325-1.04 1.933-1.228.408-.15.493-.161 1.343-.186.802-.023.944-.014 1.224.075.597.19 1.265.746 1.265 1.053 0 .193.044.242.137.241.22-.002.151-.326.037-.559-.378-.704-.968-.954-1.533-1.081-.143-.03-.6-.099-1.013-.118-.591-.027-.84-.005-1.143.06-.48.102-.898.239-1.302.596-.31.275-.857.591-1.305.805-.106.015-.174-.17-.256-.267 1.053-.807 2.03-1.521 3.449-1.64zM2.718 10.96c-.304.488-.515.842-.524 1.226-.12.301-.227.595-.38.907-.373-.376-.254-1.176-.093-1.517.357-.69.368-.508.997-.616m.798.111c1.097.336 2.247.64 3.698 1.535.278.167.13.5.024 1.034a1.68 1.68 0 0 1-1.133.607c.431-.434.878-1.195.402-1.714-.118-.156-.15-.181-.358-.166-.284.02-.288-.006-.44.389-.327.385-.492 1.292-.382 1.576-.566-.033-2.077-.152-2.95-.709.094-.243.335-.595.358-.914.119-.241.62-1.665.78-1.638zm2.7 1.709c.167.282-.192 1.135-.417 1.241-.165-.602.167-1.17.416-1.241zm3.534.831c.437 0 1.24.092 2.21.253.836.138.995.177 1.715.414.854.264.798.364 1.087.785.063.09.156.366.205.609.109.533-.402.943-1.44 1.157-.354.073-.673.097-1.23.093-.879-.007-1.19-.044-1.685-.2-.736-.231-1.114-.555-1.519-1.233-.22-.37-.273-.414-.242-.685.064-.562.183-.927.346-1.064.134-.113.203-.129.553-.129m-1.984.085c.1-.003.586.224.683.29-.142.385-.009 1.322.383 1.777.092.143.318.465.535.68.684.683 1.13.795 2.656.796 1.278.002 1.65-.068 2.285-.272.589-.188.768-.428.837-.595.17-.402.252-.817.211-1.247l1.287.366c-.106.866-.587 1.375-.944 1.821-.266.428-.816 1.23-.971 1.364-.747.643-1.436 1.095-2.928 1.936-.439.248-1.618.706-1.924.859-.312.156-1.417.81-1.569.855a9.5 9.5 0 0 1-1.554.315c-.4.047-1.82.262-2.725.299-.66.014-.84-.054-1.657-.03-.438-.084-1.396-.301-1.396-.301-.285-.457-.359-.807-.439-1.336.664.778 1.063 1.041 1.595 1.041.479 0 .725-.18.92-.18.123 0 .454-.233.437-.385a1.03 1.03 0 0 0-.253-.605c-.23-.147-1.6-.691-1.832-.691-.64 0-.781.05-.85.18.395-2.142.909-4.616 1.67-6.62 1.174.514 3.097.887 4.043.568 1.452-.51 1.12-.685 1.5-.885m3.817.15c-.168 0-.586.458-.744.815-.159.359-.202.911-.083 1.055.098.118.503.12.707-.004.398-.243.779-1.096.682-1.538-.035-.16-.33-.328-.562-.328m.026.39c.148.178-.04.659-.213.85-.204.216-.406.247-.348.058.14-.353.456-.914.561-.908M2.68 21.462c.156.049.353.27.315.33-.638.036-.998-.008-1.051-.012-.217-.017-.917-.32-.897-.657.027-.395 1.32.31 1.633.339"/></svg>
@@ -189,7 +198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/dotfiles/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -208,18 +217,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -235,7 +246,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Addon
@@ -249,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/dotfiles/addon/apps/" class="md-nav__link">
+      <a href="../apps/" class="md-nav__link">
         
   
   
@@ -269,10 +280,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/dotfiles/addon/cli/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CLI's
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -283,6 +316,70 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#from-brewmacports" class="md-nav__link">
+    <span class="md-ellipsis">
+      From brew/macports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outside-brewmacports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outside brew/macports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outside brew/macports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      go tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#envbin" class="md-nav__link">
+    <span class="md-ellipsis">
+      env/bin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -314,6 +411,58 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#from-brewmacports" class="md-nav__link">
+    <span class="md-ellipsis">
+      From brew/macports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outside-brewmacports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outside brew/macports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outside brew/macports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      go tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#envbin" class="md-nav__link">
+    <span class="md-ellipsis">
+      env/bin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -325,8 +474,122 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+    <a href="https://github.com/lukmdo/dotfiles/edit/master/docs/pages/addon/cli.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m7 14.94 6.06-6.06 2.06 2.06L9.06 17H7zM12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m4.7-10.65-1 1-2.05-2.05 1-1c.21-.22.56-.22.77 0l1.28 1.28c.22.21.22.56 0 .77M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/lukmdo/dotfiles/raw/master/docs/pages/addon/cli.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10m0-2a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-9a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m0-3c2.63 0 5 1.57 6 4a6.505 6.505 0 0 1-8.5 3.5A6.52 6.52 0 0 1 6 12c1-2.43 3.37-4 6-4m0 1.5A2.5 2.5 0 0 0 9.5 12a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 12 9.5"/></svg>
+    </a>
+  
+
+
+<h1 id="clis">CLI's<a class="headerlink" href="#clis" title="Permanent link">&para;</a></h1>
+<h2 id="from-brewmacports">From brew/macports<a class="headerlink" href="#from-brewmacports" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/cheat/cheat">cheat</a> - used by <a href="">cht.sh</a><br>
+  bonus: allows custom dirs <code>cheat -d</code> for <code>work</code> and <code>personal</code> use</li>
+<li><a href="https://dbrgn.github.io/tealdeer/">tldr</a> - used by <a href="">cht.sh</a></li>
+</ul>
+<h2 id="outside-brewmacports">Outside brew/macports<a class="headerlink" href="#outside-brewmacports" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">not in</p>
+<ul>
+<li><a href="https://github.com/lukmdo/dotfiles/blob/master/macos/macports.txt">macos/macports.txt</a></li>
+<li><a href="https://github.com/lukmdo/dotfiles/blob/master/macos/brew.txt">macos/brew.txt</a></li>
+<li><a href="../apps/">apps</a></li>
+</ul>
+</div>
+<ul>
+<li><a href="https://cloud.google.com/sdk/docs/install"><code>gcloud</code></a> and <code>kubectl</code>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mv<span class="w"> </span>~/Download/google-cloud-sdk<span class="w"> </span>~/env/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>~/env
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>./google-cloud-sdk/install.sh
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>gcloud<span class="w"> </span>components<span class="w"> </span>install<span class="w"> </span>kubectl
+</span></code></pre></div></li>
+<li><code>krew</code> plugins
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>krew<span class="w"> </span>update
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kubectl<span class="w"> </span>krew<span class="w"> </span>install<span class="w"> </span>rbac-tool<span class="w"> </span><span class="c1"># kubectl krew list</span>
+</span></code></pre></div></li>
+<li><a href="https://github.com/chubin/cheat.sh#installation">cht.sh</a>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>https://cht.sh/:cht.sh<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BIN_DIR</span><span class="s2">/cht.sh&quot;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BIN_DIR</span><span class="s2">/cht.sh&quot;</span>
+</span></code></pre></div></li>
+</ul>
+<h3 id="go-tools">go tools<a class="headerlink" href="#go-tools" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># dlv/delve via ports</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># https://pkg.go.dev/golang.org/x/pkgsite/cmd/pkgsite</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>go<span class="w"> </span>install<span class="w"> </span>golang.org/x/pkgsite/cmd/pkgsite@master
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>go<span class="w"> </span>install<span class="w"> </span>golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment@latest
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>go<span class="w"> </span>install<span class="w"> </span>golang.org/x/tools/cmd/goimports@latest
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># https://go.dev/blog/govulncheck</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>go<span class="w"> </span>install<span class="w"> </span>golang.org/x/vuln/cmd/govulncheck@latest
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">#https://pkg.go.dev/golang.org/x/exp</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>go<span class="w"> </span>install<span class="w"> </span>golang.org/x/exp/cmd/gorelease@latest
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>go<span class="w"> </span>install<span class="w"> </span>golang.org/x/exp/cmd/apidiff@latest
+</span></code></pre></div>
+<h3 id="envbin">env/bin<a class="headerlink" href="#envbin" title="Permanent link">&para;</a></h3>
+<p>drop-in binaries</p>
+<ul>
+<li><a href="https://github.com/buildpacks/pack/releases">pack</a></li>
+<li><a href="https://cli.github.com/">gh</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="April 27, 2025 23:38:23">2025-04-27</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="October 20, 2023 17:59:10">2023-10-20</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -373,10 +636,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/dotfiles/", "features": ["content.action.edit", "content.action.view", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "/dotfiles/assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/dotfiles/assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
