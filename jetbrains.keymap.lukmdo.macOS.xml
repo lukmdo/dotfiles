@@ -1,0 +1,8 @@
+<keymap version="1" name="lukmdo.macOS" parent="Mac OS X 10.5+">
+  <action id="OpenEditorInOppositeTabGroup">
+    <keyboard-shortcut first-keystroke="ctrl meta alt o" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="ctrl meta alt v" />
+  </action>
+</keymap>

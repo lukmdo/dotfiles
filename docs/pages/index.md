@@ -184,7 +184,7 @@ Then:
 - [Apps](addon/apps)
 - IDE
 
-jetbrains [keymap]({{ repo_url_to("jetbrains.kaymap.lukmdo.macOS.xml") }})
+jetbrains [keymap]({{ repo_url_to("jetbrains.keymap.lukmdo.macOS.xml") }})
 
 ### Bash Glue
 
