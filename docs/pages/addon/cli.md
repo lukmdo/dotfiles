@@ -19,6 +19,7 @@ mv ~/Download/google-cloud-sdk ~/env/
 cd ~/env
 ./google-cloud-sdk/install.sh
 gcloud components install kubectl
+gcloud components install gke-gcloud-auth-plugin
 ```
 - `krew` plugins
 ```shell
