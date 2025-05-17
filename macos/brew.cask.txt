@@ -1,0 +1,5 @@
+# sed -i -e '/^#/!d' brew.cask.txt
+# brew list --cask >> brew.cask.txt
+#
+# brew install $(grep '^\w' brew.cask.txt | tr '\n' ' ')
+mitmproxy

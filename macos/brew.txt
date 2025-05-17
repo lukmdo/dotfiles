@@ -24,6 +24,7 @@ git-lfs
 gnu-sed
 go
 golangci-lint
+goread
 gotestsum
 govulncheck
 gzip
@@ -43,6 +44,7 @@ mage
 make
 md5sha1sum
 mtr
+newsboat
 node
 openjdk
 pre-commit
