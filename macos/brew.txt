@@ -1,26 +1,30 @@
 # sed -i -e '/^#/!d' brew.txt
-# brew list --installed-on-request >> brew.txt
+# brew list --installed-on-request --full-name >> brew.txt
 #
 # brew install $(grep '^\w' brew.txt | tr '\n' ' ')
-#kubectl-argo-rollouts
 ack
 act
 argocd
+asciidoc
 bash
 bash-completion@2
 bash-preexec
-buf
 cheat
 curl
 defaultbrowser
+delve
+dependabot
 docker
 dos2unix
+exercism
+gawk
 gh
 git
 git-lfs
 gnu-sed
 go
 golangci-lint
+gotestsum
 govulncheck
 gzip
 helm
@@ -31,14 +35,19 @@ jq
 k6
 k9s
 krew
+kubeconform
 kubernetes-cli
+kubeseal
 logcli
 mage
 make
 md5sha1sum
 mtr
 node
+openjdk
 pre-commit
+prometheus
+python@3.11
 python@3.12
 r
 rlwrap
@@ -52,9 +61,13 @@ tealdeer
 terraform
 terragrunt
 tmux
+tofuenv
 tree
 uutils-coreutils
 virtualenvwrapper
 watch
 wrk
+xmlto
 yq
+argoproj/tap/kubectl-argo-rollouts
+bufbuild/buf/buf
