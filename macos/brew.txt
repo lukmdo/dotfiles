@@ -39,7 +39,7 @@ md5sha1sum
 mtr
 node
 pre-commit
-python@3.11
+python@3.12
 r
 rlwrap
 rust

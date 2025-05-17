@@ -71,13 +71,13 @@ fi
 
 export HOMEBREW_REPOSITORY=$(brew --repository)
 
-
 export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
-# export CLOUDSDK_PYTHON="/opt/homebrew/bin/python3.11"
+# https://cloud.google.com/storage/docs/gsutil_install#before_you_begin
+# Google Cloud CLI requires Python 3.8 to 3.13, while gsutil requires Python 3.8 to 3.12
+export CLOUDSDK_PYTHON="$(which python3.12)"
+# export CLOUDSDK_PYTHON=$(which python3)
 
 ## NOTE: gcloud auto added bellow
-export CLOUDSDK_PYTHON=$(which python3)
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/env/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/env/google-cloud-sdk/path.bash.inc"; fi
 
