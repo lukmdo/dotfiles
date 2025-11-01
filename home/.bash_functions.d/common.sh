@@ -118,3 +118,17 @@ gcp_webconsole() {
     chrome "https://console.cloud.google.com/kubernetes/clusters/details/${GCP_REGION}/${GCP_CLUSTER}/details?project=${GCP_PROJ}"
 }
 
+path_prepend() {
+    [[ -d "$1" ]] || return 2
+    [[ ":$PATH:" = *":$1:"* ]] && return 0
+    export PATH="$1:${PATH}"
+}
+
+path_drop() {
+    local p=":$PATH:"
+    [[ "$p" != *":$1:"* ]] && return 0
+    p="${p//:$1:/}"
+    p="${p#:}"; p="${p%:}"
+    export PATH="$p"
+}
+

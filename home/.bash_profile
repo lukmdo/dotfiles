@@ -1,5 +1,8 @@
 source $HOME/.bash_path
 
+# fix (when not set): warning: setlocale: LC_CTYPE: cannot change locale (): Bad file descriptor 
+export LC_CTYPE="UTF-8"
+
 # hide zsh info: https://support.apple.com/en-gb/HT208050
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
