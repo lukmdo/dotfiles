@@ -5,6 +5,7 @@
 ack
 act
 argocd
+arping
 asciidoc
 bash
 bash-completion@2
@@ -27,10 +28,13 @@ gnu-sed
 go
 golang-migrate
 golangci-lint
+gops
+goread
 gotestsum
 govulncheck
 gzip
 helm
+homeassistant-cli
 imagemagick
 ipcalc
 istioctl
@@ -46,6 +50,8 @@ mage
 make
 md5sha1sum
 mtr
+newsboat
+nmap
 node
 openjdk
 pre-commit
@@ -74,3 +80,4 @@ xmlto
 yq
 argoproj/tap/kubectl-argo-rollouts
 bufbuild/buf/buf
+sourcegraph/src-cli/src-cli
