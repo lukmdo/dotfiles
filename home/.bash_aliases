@@ -148,7 +148,7 @@ alias stamp='xargs -L1 echo $(date "+%H:%M:%S")'
 alias rush='time timeout $*' # rush 10 sleep 12
 
 # NETWORKING
-alias ip='curl -s httpbin.org/ip | awk "/origin/ {gsub(\"\\\"\", \"\"); print \$2}" | pbcopy'
+alias ip='curl -s https://checkcybersecurity.service.ncsc.gov.uk/api/v2/ip | jq --raw-output ".ip" | pbcopy'
 alias ip_l='ifconfig en0 | awk "\$1==\"inet\" {print \$2}" '
 alias dns_clear_cache='sudo killall -HUP mDNSResponder'
 
